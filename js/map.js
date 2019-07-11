@@ -1,12 +1,18 @@
 
 var map = L.map('map', {
-    zoomControl:false, maxZoom:20, minZoom:13,
+    zoomControl:false, maxZoom:22, minZoom:13,
     center: [51.5490, -0.077928], 
+    // maxBounds: [
+    //   //south west
+    //   [51.5118, -0.109045],
+    //   //north east
+    //   [51.590292, -0.034544]
+    //   ], 
     zoom: 13
 });
 
 //Limit the view to the extend of the map
-map.setMaxBounds(map.getBounds());
+ map.setMaxBounds(map.getBounds());
 
 //SCALE - Add scale to the map 
 
