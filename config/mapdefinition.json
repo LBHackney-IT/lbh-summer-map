@@ -162,7 +162,7 @@
         "searchable": "false",
         "sortorder": "1",
         "icon": "volleyball-ball",
-        "markercolour": "grey",
+        "markercolour": "gray",
         "popup": {
           "popuptitlefield": "",
           "popupfields": []
