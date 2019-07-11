@@ -102,7 +102,10 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
 
 
   var configlayer = mapConfig.layers[i];
-  var url="http://lbhgiswebt01/geoserver/ows?service=WFS&version=2.0&request=GetFeature&typeName="+configlayer.geoserverLayerName+"&outputFormat=json&SrsName=EPSG:4326";
+  //Live
+  var url="http://map.hackney.gov.uk/geoserver/wms?service=WFS&version=2.0&request=GetFeature&typeName="+configlayer.geoserverLayerName+"&outputFormat=json&SrsName=EPSG:4326";
+  //Test
+  //var url="http://lbhgiswebt01/geoserver/ows?service=WFS&version=2.0&request=GetFeature&typeName="+configlayer.geoserverLayerName+"&outputFormat=json&SrsName=EPSG:4326";
 
 		//var url="http://localhost:8080/geoserver/ows?service=WFS&version=2.0&request=GetFeature&typeName="+mapConfig.layergroups[i].layers[j].geoserverLayerName+"&outputFormat=json&SrsName=EPSG:4326";
 		//var iconn=mapConfig.layergroups[i].layers[j].icon;

@@ -37,7 +37,7 @@
             "groups":["hang out", "children","custom"],
             "searchable": "false",
             "sortorder": "30",
-            "icon": "graduation-cap",
+            "icon": "shopping-basket",
             "markercolour": "red",
             "popup":
             {
@@ -80,7 +80,7 @@
         "searchable": "false",
         "sortorder": "3",
         "icon": "child",
-        "markercolour": "grey",
+        "markercolour": "green",
         "popup": {
           "popuptitlefield": "",
           "popupfields": []
@@ -92,7 +92,7 @@
         "groups": [ "children", "custom" ],
         "searchable": "false",
         "sortorder": "4",
-        "icon": "child",
+        "icon": "sledding",
         "markercolour": "black",
         "popup": {
           "popuptitlefield": "",
@@ -107,7 +107,7 @@
         "searchable": "false",
         "sortorder": "100",
         "icon": "child",
-        "markercolour": "green",
+        "markercolour": "blue",
         "popup": {
           "popuptitlefield": "",
           "popupfields": []
@@ -120,7 +120,7 @@
         "groups": [ "hang out", "custom" ],
         "searchable": "false",
         "sortorder": "6",
-        "icon": "bicycle",
+        "icon": "parking-circle",
         "markercolour": "green",
         "popup": {
           "popuptitlefield": "",
@@ -161,7 +161,7 @@
         "geoserverLayerName": "amenity:sport_volley",
         "groups": [ "hang out", "custom" ],
         "searchable": "false",
-        "sortorder": "9",
+        "sortorder": "1",
         "icon": "volleyball-ball",
         "markercolour": "grey",
         "popup": {
@@ -330,7 +330,7 @@
         "groups": [ "custom" ],
         "searchable": "false",
         "sortorder": "20",
-        "icon": "futbol",
+        "icon": "football-ball",
         "markercolour": "green",
         "popup": {
           "popuptitlefield": "",
@@ -338,20 +338,7 @@
         }
 
       },
-      {
-        "title": "rugby pitch",
-        "geoserverLayerName": "amenity:sport_rugby",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "21",
-        "icon": "futbol",
-        "markercolour": "green",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
 
-      },
       {
         "title": "skate park",
         "geoserverLayerName": "amenity:sport_skate",
