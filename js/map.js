@@ -209,28 +209,3 @@ function debounce(func, wait, immediate) {
 		if (callNow) func.apply(context, args);
 	};
 };
-
-var isMobile = true;
-var $mapPersonas = $('#map-personas');
-var $desktopPersonasContainer = $('#map-personas-container-desktop');
-var $mobilePersonasContainer = $('#map-personas-container-mobile');
-
-var checkPersonaLocation = debounce(function() {
-  if (window.matchMedia('(min-width: 768px)').matches) {
-    // Desktop
-    if (isMobile) {
-      $mapPersonas.appendTo($desktopPersonasContainer);
-    }
-    isMobile = false;
-  } else {
-    // Mobile
-    if (!isMobile) {
-      $mapPersonas.appendTo($mobilePersonasContainer);
-    }
-    isMobile = true;
-  }
-}, 250);
-
-checkPersonaLocation();
-window.addEventListener('resize', checkPersonaLocation);
-
