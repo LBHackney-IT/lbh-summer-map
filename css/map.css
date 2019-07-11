@@ -169,6 +169,8 @@
     height: auto;
     padding: 0;
     position: static;
+    transform: none;
+    transition: none;
   }
 
   .map-bottom-bar-heading {
@@ -232,16 +234,39 @@
 }
 
 .leaflet-control-layers-selector + span {
-  padding: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 20px 10px 10px;
 }
 
 .leaflet-control-layers-selector:checked + span {
   background: #eee;
-  padding: 20px 10px;
+}
+
+.control-text {
+  box-sizing: border-box;
+  max-width: calc(100% - 32px);
+  padding-left: 10px;
+}
+
+.control-count {
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0;
+  padding-left: 42px;
+  width: 100%;
+}
+
+.leaflet-control-layers-selector:checked + span .control-count {
+  opacity: 1;
 }
 
 .leaflet-control-layers-selector + span .fas {
+  margin-top: 2px;
   padding: 0 6px; 
+  text-align: center;
+  width: 20px;
 }
 
 .leaflet-control-layers-selector:not(:checked) + span .fas {
