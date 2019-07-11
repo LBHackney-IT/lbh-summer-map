@@ -1,0 +1,12 @@
+.myToolTip{
+    font-size: 11px;
+    /*font-weight:bold;*/
+    padding: 2px;
+    background: white;
+    border: none;
+    color: black;
+    /*text-shadow: 10px 10px 10px white;*/
+    box-shadow: 0px 0px 10px black;
+    opacity: 0.2;
+    outline: black;
+}

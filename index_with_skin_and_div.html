@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <!--link rel="stylesheet" href="/-/static/app.css?{{ app_css_hash }}"-->
+    <link rel="stylesheet" src="css/www3-hackney.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- style added from www3 hackney page, replaced font-family Montserrat with font-family "Helvetica Neue", sans-serif -->
+<style>
+.header-module--lbhHeaderBlock--N9g9C {
+            width: 100%;
+            float: left;
+            background: orange;
+            background-color: rgba(0, 0, 0, .95);
+            height: 90px;
+            position: relative;
+            margin: 0
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 {
+            max-width: 960px;
+            margin: 0 auto;
+            cursor: pointer
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhLHeaderLogoContainer--1WB-d {
+            float: left;
+            width: 50%
+        }
+
+        @media (max-width:768px) {
+            .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhLHeaderLogoContainer--1WB-d {
+                margin: 0 0 0 15px
+            }
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhLHeaderLogoContainer--1WB-d .header-module--lbhHeaderLogo--2atBj {
+            padding-top: 27px;
+            margin-top: auto;
+            width: 200px
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC {
+            float: left;
+            width: 50%;
+            height: 30px;
+            position: relative
+        }
+
+        @media (max-width:768px) {
+            .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC {
+                display: none
+            }
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt {
+            margin-top: 25px;
+            width: 300px;
+            height: 40px;
+            position: relative;
+            float: right
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchInput--2WakA {
+            width: 100%;
+            height: 30px;
+            margin-top: 24px;
+            border: 1px solid #00664f;
+            background-color: #fff;
+            padding: 5px;
+            float: left;
+            font-weight: 300;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 19px;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.42;
+            letter-spacing: normal;
+            color: #000
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchInput--2WakA:focus {
+            border: 3px solid #ffbf47
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchButton--1sMVz {
+            width: 39px;
+            height: 42px;
+            margin-top: 24px;
+            background-image: url(https://images.ctfassets.net/s2o0gwcffln0/5XlaPzI69uTLTggpQ2cXWS/8bddacd35ff9e8c49c4c2b5c7215ebea/lbh-search.png?h=250);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            border: 1px solid #00664f;
+            background-color: #00b140;
+            color: #fff;
+            float: left;
+            text-align: center
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchButton--1sMVz:hover {
+            cursor: pointer
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchButton--1sMVz:focus {
+            border: 3px solid #ffbf47
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhOneAccountLogin--11Ueb {
+            float: left
+        }
+
+        .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhOneAccountLogin--11Ueb a {
+            float: left;
+            padding-top: 32px;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.94;
+            letter-spacing: normal;
+            text-align: center;
+            color: #fff;
+            margin-right: 36px
+        }
+
+        .lbhGrid-module--lbh-breadcrumbs--2hRCX {
+            margin-top: 40px
+        }
+
+        .lbhGrid-module--lbh-breadcrumbs--2hRCX .lbhGrid-module--lbh-link-blue--zlPxR,
+        .lbhGrid-module--lbh-breadcrumbs--2hRCX .lbhGrid-module--lbh-link-blue--zlPxR:link {
+            color: #0072ce
+        }
+
+        .lbhGrid-module--BackToTop--1ccOb,
+        .lbhGrid-module--fWohKN--1JVbh {
+            width: 100%;
+            float: left;
+            background: #84bd00;
+            height: 50px;
+            color: #000;
+            height: 18px;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: #0072ce
+        }
+
+        .lbhGrid-module--hackneyHeaderBlock--MHdoz {
+            background-color: #000;
+            width: 100%;
+            height: 120px;
+            float: left
+        }
+
+        .lbhGrid-module--lbh-logo--1xvDO {
+            width: 200px;
+            margin-top: 40px
+        }
+
+        .lbhGrid-module--headerHackneyLines--2pIHn {
+            width: 100%;
+            float: left;
+            height: auto;
+            position: relative
+        }
+
+        .lbhGrid-module--headerDarkGreenLine--1ZVFh {
+            background-color: #00664f;
+            width: 100%;
+            height: 4px;
+            float: left;
+            position: absolute;
+            top: 6px
+        }
+
+        .lbhGrid-module--headerMiddleGreenLine--KaWfz {
+            background-color: #00b341;
+            width: 100%;
+            height: 3px;
+            float: left;
+            position: absolute;
+            top: 13px
+        }
+
+        .lbhGrid-module--headerLightGreenLine--d9UrJ {
+            background-color: #84bd00;
+            width: 100%;
+            height: 2px;
+            float: left;
+            position: absolute;
+            top: 19px
+        }
+
+        .lbhGrid-module--lbhContainer--jHEYx {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 18px
+        }
+
+        @media (min-width:768px) {
+            .lbhGrid-module--lbhContainer--jHEYx {
+                padding: 0 15px
+            }
+        }
+
+        .lbhGrid-module--lbhRow--1dtHv {
+            margin-right: -18px;
+            margin-left: -18px
+        }
+
+        @media (min-width:768px) {
+            .lbhGrid-module--lbhRow--1dtHv {
+                margin-right: -15px;
+                margin-left: -15px
+            }
+        }
+
+        .lbhGrid-module--lbhColumnFull--yt43R {
+            width: 100%;
+            float: left;
+            padding: 0 18px;
+            position: relative;
+            box-sizing: border-box
+        }
+
+        @media (min-width:991px) {
+            .lbhGrid-module--lbhColumnFull--yt43R {
+                width: 100%;
+                padding: 0 15px
+            }
+        }
+
+        .lbhGrid-module--lbhColumnTwoThirds--2z5_k {
+            width: 100%;
+            float: left;
+            padding: 0 18px
+        }
+
+        @media (min-width:991px) {
+            .lbhGrid-module--lbhColumnTwoThirds--2z5_k {
+                width: 66.6666%;
+                padding: 0 15px
+            }
+        }
+
+        .lbhGrid-module--lbhColumnOneThird--36gVN {
+            width: 100%;
+            float: left;
+            padding: 0 18px
+        }
+
+        @media (min-width:991px) {
+            .lbhGrid-module--lbhColumnOneThird--36gVN {
+                width: 33.3333%;
+                padding: 0 15px
+            }
+        }
+
+        .lbhGrid-module--lbhColumnOneFourth--2psvC {
+            width: 100%;
+            float: left;
+            padding: 0 18px
+        }
+
+        @media (min-width:991px) {
+            .lbhGrid-module--lbhColumnOneFourth--2psvC {
+                width: 25%;
+                padding: 0 15px
+            }
+        }
+
+        .lbhGrid-module--lbhHide--fxRDO {
+            display: none
+        }
+
+        .lbhGrid-module--wp-block-button--FlKQb {
+            background: #ff0
+        }
+
+        .lbhGrid-module--wp-block-button__link--2b8th {
+            box-shadow: inset 0 -2px 0 0 #003d2f;
+            background-color: #00664f;
+            font-weight: 300;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 19px;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.42;
+            letter-spacing: normal;
+            color: #fff;
+            padding: 10px 20px
+        }
+        .footer-module--isThisUsefulRow--1GArV {
+            background: #fff;
+            float: left;
+            width: 100%;
+            color: #fff;
+            border-bottom: 5px solid #00664f;
+            font-size: 16px;
+            line-height: 20px
+        }
+
+        .footer-module--isThisUsefulRow--1GArV .footer-module--isThisUsefulBlock--flxme {
+            background: #00664f;
+            float: left;
+            margin-left: -15px;
+            width: 100%;
+            padding: 7.5px 15px
+        }
+
+        .footer-module--isThisUsefulRow--1GArV .footer-module--isThisUsefulBlock--flxme ul.footer-module--yesOrNo--8ts4A {
+            list-style-type: none;
+            margin: 0 0 0 -40px;
+            display: inline-block;
+            width: 100%
+        }
+
+        .footer-module--isThisUsefulRow--1GArV .footer-module--isThisUsefulBlock--flxme ul.footer-module--yesOrNo--8ts4A li {
+            margin-left: 20px;
+            float: left
+        }
+
+        .footer-module--isThisUsefulRow--1GArV .footer-module--isThisUsefulBlock--flxme ul.footer-module--yesOrNo--8ts4A li a {
+            color: #fff;
+            text-decoration: underline
+        }
+
+        .footer-module--isThisUsefulRow--1GArV .footer-module--isThisUsefulBlock--flxme ul.footer-module--yesOrNo--8ts4A li a:hover {
+            text-decoration: underline;
+            cursor: pointer
+        }
+
+        .footer-module--isThisUsefulRow--1GArV .footer-module--isThisUsefulBlock--flxme ul.footer-module--yesOrNo--8ts4A li:first-child {
+            margin-left: 0
+        }
+
+        .footer-module--isThisUsefulRow--1GArV .footer-module--isThisUsefulBlock--flxme ul.footer-module--yesOrNo--8ts4A li:nth-child(4) {
+            float: left;
+            margin: 10px 0 0
+        }
+
+        @media (min-width:491px) {
+            .footer-module--isThisUsefulRow--1GArV .footer-module--isThisUsefulBlock--flxme ul.footer-module--yesOrNo--8ts4A li:nth-child(4) {
+                margin: 0 0 0 20px;
+                float: right
+            }
+        }
+
+        .footer-module--lbhNewsletterSignUp--1vcPN {
+            background: #84bd00;
+            height: 320px;
+            width: 100%;
+            float: left;
+            color: #fff
+        }
+
+        @media (max-width:768px) {
+            .footer-module--lbhNewsletterSignUp--1vcPN {
+                height: auto
+            }
+        }
+
+        .footer-module--lbhNewsletterSignUp--1vcPN h1 {
+            color: #fff;
+            margin-top: 30px
+        }
+
+        .footer-module--lbhNewsletterSignUp--1vcPN .footer-module--newsletterInfo--3vGl6 {
+            margin-bottom: 40px
+        }
+
+        .footer-module--lbhNewsletterSignUp--1vcPN .footer-module--lbhNewsletterBox--2to3k input {
+            width: 680px;
+            height: 50px;
+            padding: 0 12.5px;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: #000;
+            margin-right: 40px;
+            border: none;
+            float: left
+        }
+
+        @media (max-width:768px) {
+            .footer-module--lbhNewsletterSignUp--1vcPN .footer-module--lbhNewsletterBox--2to3k input {
+                width: 80%
+            }
+        }
+
+        .footer-module--lbhNewsletterSignUp--1vcPN .footer-module--lbhNewsletterBox--2to3k button {
+            float: left;
+            width: 200px;
+            height: 50px;
+            border: none;
+            border-bottom: 2px solid #003d2f;
+            background: #00664f;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: 1.5;
+            letter-spacing: normal;
+            color: #fff;
+            margin: 15px 0 30px
+        }
+
+        .footer-module--lbhNewsletterSignUp--1vcPN .footer-module--lbhNewsletterBox--2to3k button:hover {
+            cursor: pointer
+        }
+
+        .footer-module--footerWrapper--1MgLq {
+            width: 100%;
+            height: auto;
+            background: #000;
+            color: #fff;
+            text-transform: uppercase;
+            float: left;
+            text-align: center;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            position: relative;
+            padding: 40px 0
+        }
+
+        .footer-module--footerWrapper--1MgLq .footer-module--footerDarkGreenLine--2QHgu {
+            background-color: #00664f;
+            width: 100%;
+            height: 5px;
+            float: left;
+            position: absolute;
+            bottom: 232px
+        }
+
+        .footer-module--footerWrapper--1MgLq .footer-module--footerMiddleGreenLine--1gv_o {
+            background-color: #00b341;
+            width: 100%;
+            height: 4px;
+            float: left;
+            position: absolute;
+            bottom: 223px
+        }
+
+        .footer-module--footerWrapper--1MgLq .footer-module--footerLightGreenLine--2RFDK {
+            background-color: #84bd00;
+            width: 100%;
+            height: 3px;
+            float: left;
+            position: absolute;
+            bottom: 214px
+        }
+
+        .footer-module--footerWrapper--1MgLq a {
+            color: #fff;
+            text-decoration: none
+        }
+
+        .footer-module--footerWrapper--1MgLq ul.footer-module--footerLinks--3y-T5 {
+            width: auto;
+            list-style-type: none;
+            margin-left: -40px;
+            display: inline-block
+        }
+
+        .footer-module--footerWrapper--1MgLq ul.footer-module--footerLinks--3y-T5 li {
+            text-transform: uppercase;
+            text-align: center;
+            padding: 5px 20px;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            float: left;
+            width: 40%
+        }
+
+        @media (min-width:991px) {
+            .footer-module--footerWrapper--1MgLq ul.footer-module--footerLinks--3y-T5 li {
+                width: auto
+            }
+        }
+
+        .footer-module--footerWrapper--1MgLq ul.footer-module--footerLinks--3y-T5 li a {
+            float: left
+        }
+
+        .footer-module--footerWrapper--1MgLq ul.footer-module--footerShareLinks--42J62 {
+            width: auto;
+            list-style-type: none;
+            margin-left: -40px;
+            display: inline-block
+        }
+
+        .footer-module--footerWrapper--1MgLq ul.footer-module--footerShareLinks--42J62 li {
+            float: left;
+            text-align: center;
+            padding: 5px 20px;
+            font-family: "Helvetica Neue", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: normal
+        }
+
+        .footer-module--footerWrapper--1MgLq ul.footer-module--footerShareLinks--42J62 li a {
+            float: left;
+            cursor: pointer
+        }
+
+        .footer-module--footerWrapper--1MgLq ul.footer-module--footerShareLinks--42J62 li a svg {
+            width: 30px;
+            height: 30px
+        }
+</style>
+<!-- style tweaks i've added -->
+<style>
+body {
+    margin: 0;
+}
+
+.public-mapping-content {
+/*    margin-left: 1em;*/
+    margin-top: 6em;
+    height:600px;
+}
+</style>
+
+<!-- PublicMappingPlatform stuff-->
+<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Add styles -->
+        <link rel="stylesheet" href="css/leaflet.css">      
+        <link rel="stylesheet" href="css/leaflet-panel-layers.css">
+        <link rel="stylesheet" href="css/public-mapping-platform.css">
+        <!--link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet"-->
+        <link rel="stylesheet" href="css/leaflet.awesome-markers.css">
+        <!-- <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" /> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.67.0/dist/L.Control.Locate.min.css" />
+        <!-- Add modules -->
+        <script src="js/loadLayersAsList.js"></script>
+        <!-- Add plugins -->
+        <!-- <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js?2"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="js/leaflet/leaflet.js"></script>
+        <script src="js/leaflet/leaflet-panel-layers.js"></script>
+        <script src="js/leaflet/leaflet.awesome-markers.js"></script>
+        <script src="js/Leaflet.Control.Custom.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@v0.67.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>   
+        <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+        <script src="https://kit.fontawesome.com/4f0c1678ab.js"></script>
+
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #map-title{
+            width: 100%;
+            height: 70px;
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .maptitle{
+            background: #00664F;
+            height: 100%; 
+            margin: 0;
+            color: white;
+        }
+
+
+        </style>
+        <title>Public Mapping Platform</title>
+<!-- end of PublicMappingPlatform stuff-->
+
+
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+                <div style="outline:none" tabindex="-1" role="group">
+                            <header role="banner" data-module="header">
+                                <div class="header-module--lbhHeaderBlock--N9g9C">
+                                    <div class="header-module--lbhContainer--39gu1"><a href="https://hackney.gov.uk/">
+                                            <div class="header-module--lbhLHeaderLogoContainer--1WB-d"><img
+                                                    src="https://images.ctfassets.net/f4lw14w2qvoe/3uG98DNF3Vgc13mUIM1MXj/bbec5c848a114aa6e87603200b44e0a2/Hackney_Logo_White.png"
+                                                    alt="London Borough of Hackney"
+                                                    class="header-module--lbhHeaderLogo--2atBj" /></div>
+                                        </a>
+                                        <div class="header-module--lbhHeaderCtaContainer--2dCdC">
+                                            <div class="header-module--lbhHeaderSearch--3WzJt"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lbhGrid-module--headerHackneyLines--2pIHn">
+                                    <div class="lbhGrid-module--headerDarkGreenLine--1ZVFh"></div>
+                                    <div class="lbhGrid-module--headerMiddleGreenLine--KaWfz"></div>
+                                    <div class="lbhGrid-module--headerLightGreenLine--d9UrJ"></div>
+                                </div>
+                            </header>
+                            
+                        </div>
+                        <main class="" id="main-content" role="main">
+                        <div><br></div>
+                        <div class="public-mapping-content">
+<!-- PublicMappingPlatform stuff-->
+        <div id="map-title"></div>
+        <div id="map"></div>
+        <script src="js/map.js"></script>
+<!-- End PublicMappingPlatform stuff-->
+</div>
+
+
+
+
+</main>
+<div>
+    <footer class="footer-module--footerWrapper--1MgLq" role="contentinfo">
+        <div class="lbhGrid-module--lbhContainer--jHEYx">
+            <div class="lbhGrid-module--lbhRow--1dtHv">
+                <div>
+                    <div>
+                        <ul class="footer-module--footerLinks--3y-T5">
+                            <li><a href="https://hackney.gov.uk/accessibility-help">Accessibility</a>
+                            </li>
+                            <li><a href="https://hackney.gov.uk/contact-us">Contact</a></li>
+                            <li><a
+                                    href="https://public.govdelivery.com/accounts/UKHACKNEYCOUNCIL/subscriber/new">Email
+                                    Alerts</a></li>
+                            <li><a href="https://www.hackney.gov.uk/contact-us#fb">Feedback</a></li>
+                            <li><a href="https://hackney.gov.uk/help">Help</a></li>
+                            <li><a href="http://news.hackney.gov.uk/">News</a></li>
+                            <li><a href="https://hackney.gov.uk/privacy">Privacy</a></li>
+                            <li><a href="https://hackney.gov.uk/disclaimer">Terms of use</a></li>
+                        </ul>
+                        <ul class="footer-module--footerShareLinks--42J62">
+                            <li><a href="http://www.twitter.com/hackneycouncil"
+                                    title="Follow us on Twitter" target="_blank"><svg aria-hidden="true"
+                                        focusable="false" data-prefix="fab" data-icon="twitter"
+                                        class="svg-inline--fa fa-twitter fa-w-16 " role="img"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                        alt="Twitter">
+                                        <path fill="currentColor"
+                                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
+                                        </path>
+                                    </svg>
+                                    <title>Twitter</title>
+                                </a></li>
+                            <li><a href="http://www.facebook.com/hackneycouncil"
+                                    title="Follow us on Facebok" target="_blank"><svg aria-hidden="true"
+                                        focusable="false" data-prefix="fab" data-icon="facebook"
+                                        class="svg-inline--fa fa-facebook fa-w-14 " role="img"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                        alt="Facebook">
+                                        <path fill="currentColor"
+                                            d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z">
+                                        </path>
+                                    </svg>
+                                    <title>Facebook</title>
+                                </a></li>
+                            <li><a href="http://www.youtube.com/hackneycouncil"
+                                    itle="Follow us on Youtube" target="_blank"><svg aria-hidden="true"
+                                        focusable="false" data-prefix="fab" data-icon="youtube"
+                                        class="svg-inline--fa fa-youtube fa-w-18 " role="img"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"
+                                        alt="Youtube">
+                                        <path fill="currentColor"
+                                            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z">
+                                        </path>
+                                    </svg>
+                                    <title>Youtube</title>
+                                </a></li>
+                            <li><a href="https://www.instagram.com/hackneycouncil/"
+                                    itle="Follow us on Instagram" target="_blank"><svg
+                                        aria-hidden="true" focusable="false" data-prefix="fab"
+                                        data-icon="instagram"
+                                        class="svg-inline--fa fa-instagram fa-w-14 " role="img"
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+                                        alt="Instagram">
+                                        <path fill="currentColor"
+                                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                        </path>
+                                    </svg>
+                                    <title>Instagram</title>
+                                </a></li>
+                        </ul>
+                    </div><a aria-current="page" class="" href="/">Copyright - Hackney Council -
+                        <!-- -->2019</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

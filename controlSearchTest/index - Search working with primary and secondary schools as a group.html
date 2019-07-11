@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-search.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:20, minZoom:13
+        }).fitBounds([[51.5239350196,-0.141620638434],[51.5786156827,0.00473874457217]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,Tiles courtesy of <a href="http://hot.openstreetmap.org/" target="_blank">Humanitarian OpenStreetMap Team</a>',
+            maxZoom: 20
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+        }
+        var overlay_OSZoomStack_0 = L.tileLayer('https://api.mapbox.com/styles/v1/hackneygis/cjk8lmw5r9mlz2sohv2n6xnfq/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFja25leWdpcyIsImEiOiJjajh2ZGRiMDMxMzc5MndwbHBmaGtjYTAyIn0.G75YwN8Zgr8gqDJoV8XMFw', {
+            opacity: 1.0
+        });
+        overlay_OSZoomStack_0.addTo(map);
+        // -------------------------------------------------------------------------------------------------------------
+        function pop_boundarieshackney_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['borough'] !== null ? Autolinker.link(String(feature.properties['borough'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['total_households'] !== null ? Autolinker.link(String(feature.properties['total_households'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['longitude'] !== null ? Autolinker.link(String(feature.properties['longitude'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['latitude'] !== null ? Autolinker.link(String(feature.properties['latitude'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['prinx'] !== null ? Autolinker.link(String(feature.properties['prinx'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_boundarieshackney_1_0() {
+            return {
+                pane: 'pane_boundarieshackney_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 4.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(92,229,42,0.0)',
+            }
+        }
+        map.createPane('pane_boundarieshackney_1');
+        map.getPane('pane_boundarieshackney_1').style.zIndex = 401;
+        map.getPane('pane_boundarieshackney_1').style['mix-blend-mode'] = 'normal';
+        var layer_boundarieshackney_1 = L.geoJson(null, {
+            attribution: '<a href=""></a>',
+            style: style_boundarieshackney_1_0,
+            pane: 'pane_boundarieshackney_1',
+            onEachFeature: pop_boundarieshackney_1
+        });
+        function getboundarieshackney_1Json(geojson) {
+            layer_boundarieshackney_1.addData(geojson);
+        };
+        bounds_group.addLayer(layer_boundarieshackney_1);
+        map.addLayer(layer_boundarieshackney_1);
+
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
+        //Park Boundaries layer
+
+        function pop_greenspaceshackney_park_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['park_id'] !== null ? Autolinker.link(String(feature.properties['park_id'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['old_ward'] !== null ? Autolinker.link(String(feature.properties['old_ward'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['new_ward'] !== null ? Autolinker.link(String(feature.properties['new_ward'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['land_registry'] !== null ? Autolinker.link(String(feature.properties['land_registry'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['area_h'] !== null ? Autolinker.link(String(feature.properties['area_h'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['prinx'] !== null ? Autolinker.link(String(feature.properties['prinx'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+        
+        function style_greenspaceshackney_park_2_0() {
+            return {
+                pane: 'pane_greenspaceshackney_park_2',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(48,142,63,0.0)',
+            }
+        }
+        map.createPane('pane_greenspaceshackney_park_2');
+        map.getPane('pane_greenspaceshackney_park_2').style.zIndex = 402;
+        map.getPane('pane_greenspaceshackney_park_2').style['mix-blend-mode'] = 'normal';
+        var layer_greenspaceshackney_park_2 = L.geoJson(null, {
+            attribution: '<a href=""></a>',
+            style: style_greenspaceshackney_park_2_0,
+            pane: 'pane_greenspaceshackney_park_2',
+            onEachFeature: pop_greenspaceshackney_park_2
+        });
+        function getgreenspaceshackney_park_2Json(geojson) {
+            layer_greenspaceshackney_park_2.addData(geojson);
+        };
+        bounds_group.addLayer(layer_greenspaceshackney_park_2);
+        map.addLayer(layer_greenspaceshackney_park_2);
+
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
+        //Primary Schools layer
+
+        function pop_educationprimary_school_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['address'] !== null ? Autolinker.link(String(feature.properties['address'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['postcode'] !== null ? Autolinker.link(String(feature.properties['postcode'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['cc_area'] !== null ? Autolinker.link(String(feature.properties['cc_area'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['label'] !== null ? Autolinker.link(String(feature.properties['label'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['details'] !== null ? Autolinker.link(String(feature.properties['details'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['prinx'] !== null ? Autolinker.link(String(feature.properties['prinx'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_educationprimary_school_1_0() {
+            return {
+                pane: 'pane_educationprimary_school_1',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(138,165,191,0.0)',
+            }
+        }
+        map.createPane('pane_educationprimary_school_1');
+        map.getPane('pane_educationprimary_school_1').style.zIndex = 401;
+        map.getPane('pane_educationprimary_school_1').style['mix-blend-mode'] = 'normal';
+        function pointToLayer_educationprimary_school_1_0(feature, latlng) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            return L.circleMarker(latlng, style_educationprimary_school_1_0(feature));
+        }
+        var layer_educationprimary_school_1 = L.geoJson(null, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_educationprimary_school_1',
+            pointToLayer: pointToLayer_educationprimary_school_1_0, 
+            onEachFeature: pop_educationprimary_school_1
+        });
+        function geteducationprimary_school_1Json(geojson) {
+            layer_educationprimary_school_1.addData(geojson);
+            setBounds();
+        };
+        bounds_group.addLayer(layer_educationprimary_school_1);
+        map.addLayer(layer_educationprimary_school_1);
+
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
+        //Secondary Schools layer
+
+        function pop_educationsecondary_school_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type'] !== null ? Autolinker.link(String(feature.properties['type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['group_type'] !== null ? Autolinker.link(String(feature.properties['group_type'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['education_phase'] !== null ? Autolinker.link(String(feature.properties['education_phase'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['address'] !== null ? Autolinker.link(String(feature.properties['address'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['postcode'] !== null ? Autolinker.link(String(feature.properties['postcode'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['locality'] !== null ? Autolinker.link(String(feature.properties['locality'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['web'] !== null ? Autolinker.link(String(feature.properties['web'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['phone'] !== null ? Autolinker.link(String(feature.properties['phone'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['gender'] !== null ? Autolinker.link(String(feature.properties['gender'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['censusdate'] !== null ? Autolinker.link(String(feature.properties['censusdate'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['numberofpupils'] !== null ? Autolinker.link(String(feature.properties['numberofpupils'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['numberofboys'] !== null ? Autolinker.link(String(feature.properties['numberofboys'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['numberofgirls'] !== null ? Autolinker.link(String(feature.properties['numberofgirls'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['lastchangeddate'] !== null ? Autolinker.link(String(feature.properties['lastchangeddate'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['prinx'] !== null ? Autolinker.link(String(feature.properties['prinx'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_educationsecondary_school_1_0() {
+            return {
+                pane: 'pane_educationsecondary_school_1',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(0,0,0,0.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(87,138,70,0.0)',
+            }
+        }
+        map.createPane('pane_educationsecondary_school_1');
+        map.getPane('pane_educationsecondary_school_1').style.zIndex = 401;
+        map.getPane('pane_educationsecondary_school_1').style['mix-blend-mode'] = 'normal';
+        function pointToLayer_educationsecondary_school_1_0(feature, latlng) {
+            var context = {
+                feature: feature,
+                variables: {}
+            };
+            return L.circleMarker(latlng, style_educationsecondary_school_1_0(feature));
+        }
+        var layer_educationsecondary_school_1 = L.geoJson(null, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_educationsecondary_school_1',
+            pointToLayer: pointToLayer_educationsecondary_school_1_0, 
+            onEachFeature: pop_educationsecondary_school_1
+        });
+        function geteducationsecondary_school_1Json(geojson) {
+            layer_educationsecondary_school_1.addData(geojson);
+            setBounds();
+        };
+        bounds_group.addLayer(layer_educationsecondary_school_1);
+        map.addLayer(layer_educationsecondary_school_1);
+        
+        // -------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
+         // search. uses the NAME field from the GROUP layers which contains primary and secondary schools
+         // zoom level 17
+        map.addControl(new L.Control.Search({
+            //layer: layer_educationprimary_school_1,
+            //layer: layer_educationsecondary_school_1,
+            layer: L.layerGroup([layer_educationsecondary_school_1, layer_educationprimary_school_1]),
+            initial: false,
+            collapsed: false,
+            zoom: 17,
+            textPlaceholder: 'Search by park or event',
+            textErr: 'Location not found. Please start typing the name of the event or park where it will take place',
+            propertyName: 'name', }));
+
+        </script>
+        <!--WFS layers -->
+        <!-- hackney boundary -->
+        <script src='http://lbhgiswebt01/geoserver/ows?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=boundaries:hackney&SRSNAME=EPSG:4326&outputFormat=text%2Fjavascript&format_options=callback%3Agetboundarieshackney_1Json'></script>
+        <!-- hackney park boundaries, used for the search box -->
+        <script src='http://lbhgiswebt01/geoserver/ows?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=greenspaces:hackney_park&SRSNAME=EPSG:4326&outputFormat=text%2Fjavascript&format_options=callback%3Agetgreenspaceshackney_park_2Json'></script>
+        <!-- primary and secondary schools, used for the search box -->
+        <script src='http://lbhgiswebt01/geoserver/ows?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=education:primary_school&SRSNAME=EPSG:4326&outputFormat=text%2Fjavascript&format_options=callback%3Ageteducationprimary_school_1Json'></script>
+        <script src='http://lbhgiswebt01/geoserver/ows?SERVICE=WFS&VERSION=1.0.0&REQUEST=GetFeature&TYPENAME=education:secondary_school&SRSNAME=EPSG:4326&outputFormat=text%2Fjavascript&format_options=callback%3Ageteducationsecondary_school_1Json'></script>
+    </body>
+</html>

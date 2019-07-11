@@ -1,0 +1,107 @@
+{
+    "mapid": "1",
+    "name": "Summer in Hackney",
+    "abstract": "What can you do in Hackney this summer? Choose an activity and see what's on offer.",
+    "layergroups": [
+      {
+        "name": "walking and eating",
+        "groupicon": "fa-utensils-alt",
+        "layers": [         
+          {
+            "title": "picnic bench",
+            "geoserverLayerName": "greenspaces:park_picnic_bench",
+            "icon": "graduation-cap",
+            "markercolour": "blue",
+            "popup":
+            {
+              "popuptitlefield": "",
+              "popupfields":[]
+            }
+
+          },
+          {
+            "title":"drinking fountain",
+            "geoserverLayerName":"greenspaces:Park_drinking_fountain",
+            "icon":"tint",
+            "markercolour":"blue",
+            "popup":
+            {
+              "popuptitlefield": "",
+              "popupfields":[]
+            }
+          },
+          {
+            "title":"public toilet",
+            "geoserverLayerName":"greenspaces:park_public_toilet",
+            "icon":"restroom",
+            "markercolour":"blue",
+            "popup":
+            {
+              "popuptitlefield": "",
+              "popupfields":[]
+            }
+          }
+        ]
+      },
+      {
+        "name": "playing",
+        "groupicon": "fa-child",
+        "layers": [
+          {
+            "title": "park playground",
+            "geoserverLayerName": "greenspaces:park_playarea_point",
+            "icon": "child",
+            "markercolour": "green",
+            "popup":
+            {
+              "popuptitlefield": "",
+              "popupfields":[]
+            }
+          },
+          {
+            "title": "adventure playground",
+            "geoserverLayerName": "amenity:adventure_playground",
+            "icon": "child",
+            "markercolour": "blue",
+            "popup":
+            {
+              "popuptitlefield": "",
+              "popupfields":[]
+            }
+          }
+        ]
+      },
+      {
+        "name": "featured events",
+        "groupicon": "fa-bullseye",
+        "layers": [
+          {
+            "title": "comms event",
+            "geoserverLayerName": "amenity:summer_comms_event",
+            "icon": "bullseye",
+            "markercolour": "blue",
+            "popup":
+            {
+              "popuptitlefield": "name",
+              "popupfields":[
+                {
+                  "fieldlabel":"",
+                  "fieldname":"description"
+                },
+                {
+                  "fieldlabel":"for",
+                  "fieldname": "target_public"
+                }
+              ]
+            }
+          }        
+        ]
+      }
+    ],
+    "searchablelayers":[
+      {
+        "title": "park",
+        "geoserverLayerName": "greenspaces:hackney_park"
+      }
+    ]
+}
