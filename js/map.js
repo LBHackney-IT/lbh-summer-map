@@ -5,6 +5,7 @@ var map = L.map('map', {
     zoom: 13
 });
 
+//Limit the view to the extend of the map
 map.setMaxBounds(map.getBounds());
 
 //SCALE - Add scale to the map 
