@@ -1,9 +1,11 @@
 
 var map = L.map('map', {
     zoomControl:false, maxZoom:20, minZoom:13,
-    center: [51.5556, -0.0792], 
+    center: [51.5490, -0.077928], 
     zoom: 13
 });
+
+map.setMaxBounds(map.getBounds());
 
 //SCALE - Add scale to the map 
 
@@ -76,7 +78,7 @@ var currentLocation = L.control.locate({
   // ZOOM TO HACKNEY EXTENT - Zoom to Hackney Extent using easyButton
 
 var ZoomToExtent = L.easyButton('fa-globe', function (btn, map) {
-    map.setView([51.5556, -0.0792],13);
+    map.setView([51.5490, -0.077928],13);
 },
 { position: 'topright' });
 //Add easy button Zoom to Extent to the map
