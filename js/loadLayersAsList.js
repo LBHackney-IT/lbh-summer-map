@@ -163,6 +163,7 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
             // var popupfields = this.popupfields;
             var layername = this.configlayer.title; // get from context
             var parentgroups = this.configlayer.groups;
+            var sortorder = parseInt(this.configlayer.sortorder);
             var markericon = this.configlayer.icon;
             var markercolour = this.configlayer.markercolour;
             var popuptitlefield = this.configlayer.popup.popuptitlefield;
@@ -211,7 +212,8 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
                   }                 
                 }
                 layer.bindPopup(stringpopup);
-              }
+              },
+              sortorder: sortorder
               
             });
             
@@ -326,7 +328,13 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n){
 }
   
 function createControl(overlayMaps){
-  layercontrol = new L.control.layers(null, overlayMaps, {collapsed: false, sortLayers: true});
+    layercontrol = new L.control.layers(null, overlayMaps, {
+        collapsed: false,
+        sortLayers: true,
+        sortFunction: function (a, b) {
+            return a.options.sortorder - b.options.sortorder;
+        }
+    });
   map.addControl(layercontrol, {collapsed: false, position:'topleft'});
   var mapLegend = document.getElementById('map-legend');
   mapLegend.appendChild(layercontrol.getContainer());
