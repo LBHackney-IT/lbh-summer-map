@@ -172,7 +172,6 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
             var overlayMaps = this.overlayMaps;
             var layerGroups = this.layerGroups;
             var layers = this.layers;
-            var count = 0;
             var layer = new L.GeoJSON(data, { 
 
               pointToLayer: function (feature, latlng) {      
@@ -185,7 +184,6 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
 
               onEachFeature: function (feature, layer) {
                console.log('feature read');
-               count++;
                 //here need to cretae a popup
                 //popupOptions = {maxWidth: 200};
                 
@@ -221,6 +219,7 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
             
             //add layer to a list which doesn't take into account groups
             layers.push(layer);
+            var count = layer.getLayers().length;
             //prepare entry for layercontrol
             var legendEntry = '<i class="fas fa-'+markericon+'" style="color:' + leafletMarkerColours[markercolour] + '"></i><span class="control-text">'+ layername + '</span><span class="control-count">' + count + ' items shown</span>';
             overlayMaps[legendEntry] = layer;
