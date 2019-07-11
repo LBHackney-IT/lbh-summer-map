@@ -30,22 +30,21 @@
       }
     ],
     
-    "layers": [         
-          {
-            "title": "picnic bench",
-            "geoserverLayerName": "greenspaces:park_picnic_bench",
-            "groups":["hang out", "children","custom"],
-            "searchable": "false",
-            "sortorder": "30",
-            "icon": "shopping-basket",
-            "markercolour": "red",
-            "popup":
-            {
-              "popuptitlefield": "",
-              "popupfields":[]
-            }
+    "layers": [
+      {
+        "title": "picnic bench",
+        "geoserverLayerName": "greenspaces:park_picnic_bench",
+        "groups": [ "hang out", "children", "custom" ],
+        "searchable": "false",
+        "sortorder": "30",
+        "icon": "shopping-basket",
+        "markercolour": "darkpurple",
+        "popup": {
+          "popuptitlefield": "",
+          "popupfields": []
+        }
 
-          },
+      },
           {
             "title":"drinking fountain",
             "geoserverLayerName":"greenspaces:Park_drinking_fountain",
@@ -171,7 +170,7 @@
 
       },
       {
-        "title": "padding pool",
+        "title": "paddling pool",
         "geoserverLayerName": "amenity:swimming_padding_pool",
         "groups": [ "children", "custom" ],
         "searchable": "false",
@@ -247,7 +246,7 @@
         "searchable": "false",
         "sortorder": "14",
         "icon": "horizontal-rule",
-        "markercolour": "red",
+        "markercolour": "darkblue",
         "popup": {
           "popuptitlefield": "",
           "popupfields": []
@@ -261,7 +260,7 @@
         "searchable": "false",
         "sortorder": "15",
         "icon": "horizontal-rule",
-        "markercolour": "black",
+        "markercolour": "blue",
         "popup": {
           "popuptitlefield": "",
           "popupfields": []
@@ -275,7 +274,7 @@
         "searchable": "false",
         "sortorder": "16",
         "icon": "tennis-ball",
-        "markercolour": "green",
+        "markercolour": "orange",
         "popup": {
           "popuptitlefield": "",
           "popupfields": []
@@ -289,7 +288,7 @@
         "searchable": "false",
         "sortorder": "17",
         "icon": "basketball-hoop",
-        "markercolour": "green",
+        "markercolour": "orange",
         "popup": {
           "popuptitlefield": "",
           "popupfields": []

@@ -24,14 +24,24 @@ xmlhttp.send();
 
 
 var leafletMarkerColours = {
-	"green": "#70ad26",
-  "blue": "#34a1d2",
-  "orange":"#f69730",
-  "red": "#d43e2a",
-  "yellow": "#cbc529",
-  "violet": "#9d2ccc",
-  "grey": "#797979",
-  "black":"#3b3b3b"
+    "red": "#d43e2a",
+    "orange": "#F69730",
+    "green": "#70ad26",
+    "blue": "#38aadd",
+    "purple": "#D252BA",
+    "darkred": "#a23336",
+    "darkblue": "#0e67a3",
+    "darkgreen": "#728224",
+    "darkpurple": "#5b396b",
+    "cadetblue": "#436978",
+    "lightred": "#fc8e7f",
+    "beige": "#ffcb92",
+    "lightgreen": "#bbf970",
+    "lightblue": "#8adaff",
+    "pink": "#ff91ea",
+    "lightgray": "#a3a3a3",
+    "gray": "#575757",
+    "black": "#3b3b3b"
 }
 
 //READ MAP CONFIG, LOAD ALL LAYERS, PUT THEM IN GROUPS, CREATE ONE LAYER CONTROL AND ONE EASYBUTTON PER GROUP
@@ -176,8 +186,10 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
             var layerGroups = this.layerGroups;
             var layers = this.layers;
             var layer = new L.GeoJSON(data, { 
+                //set colour for lines
+                color: leafletMarkerColours[markercolour],
 
-              pointToLayer: function (feature, latlng) {      
+                pointToLayer: function (feature, latlng) {      
                 //create marker 
                 var marker = L.marker(latlng, {icon: L.AwesomeMarkers.icon({icon: markericon, prefix: 'fa', markerColor: markercolour, spin:false}) });
                 //var marker = L.marker(latlng);
