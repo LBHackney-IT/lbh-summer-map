@@ -192,24 +192,8 @@ $.ajax({
         loadLayers(mapConfig);
         }     
 });
-var bottomBar = document.getElementById('map-bottom-bar');
-var $bottomBar = $('.map-bottom-bar');
-var hammertime = new Hammer(bottomBar);
-hammertime.on('swipeup', function(ev) {
-	if (window.matchMedia('min-width: 768px').matches) {
-    return false;
-  } else {
-    $('.map-bottom-bar').addClass('map-bottom-bar--open');
-  }
-});
 
-hammertime.on('swipedown', function(ev) {
-  if (window.matchMedia('min-width: 768px').matches) {
-    return false;
-  } else {
-    $('.map-bottom-bar').removeClass('map-bottom-bar--open');
-  }
-});
+var $bottomBar = $('.map-bottom-bar');
 
 $bottomBar.on('click', (e) => {
   if (window.matchMedia('min-width: 768px').matches) {
