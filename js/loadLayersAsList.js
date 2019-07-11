@@ -250,37 +250,6 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
     } //end i
 }//end loadLayers
 
-//create control with all layers from all groups
-
-
-//create controls for each group of layers. All the layers in all groups must have been loaded. 
-function createEasyButtonsOld(layerGroup, layers, layercontrol, n){
-  var button = document.createElement('button');
-  button.classList.add('persona-button');
-  button.setAttribute('id', 'persona-button-' + n)
-  button.innerHTML = '<span class="button-icon"><img src=' + layerGroup.groupIcon + ' alt="' + layerGroup.groupText + '" /></span><span class="button-text">' + layerGroup.groupText + '</span>';
-  var mapPersonas = document.getElementById('map-personas');
-  mapPersonas.appendChild(button);
-  $('#persona-button-' + n).on('click', function(){
-    //Find the layer control, untick all layers and tick only the ones that are in that group 
-    for (var j in layers){
-      map.removeLayer(layers[j]);
-    }
-    if (layergroup.group != 'custom'){
-      for (var k in layerGroup.layersInGroup){
-      map.addLayer(layerGroup.layersInGroup[k]);
-    }
-
-    }
-  });
-    
-    //add the single control we want
-    //map.addControl(layerGroup.control);
-    //alert ('I am the easybutton of ' + layerGroup.group)
-    // layerGroup.groupEasyButton.addTo(map);
-    
-}
-
 
 //create controls for each group of layers. All the layers in all groups must have been loaded. 
 function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n){
@@ -290,7 +259,8 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n){
   button.innerHTML = '<span class="button-icon"><img src=' + layerGroup.groupIcon + ' alt="' + layerGroup.groupText + '" /></span><span class="button-text">' + layerGroup.groupText + '</span>';
   var mapPersonas = document.getElementById('map-personas');
   mapPersonas.appendChild(button);
-  $('#persona-button-' + n).on('click', function(){
+  $('#persona-button-' + n).on('click', function(e){
+    e.stopPropagation();
     //Find the layer control, untick all layers and tick only the ones that are in that group 
     for (var j in layers){
       map.removeLayer(layers[j]);
@@ -330,6 +300,7 @@ function createControl(overlayMaps){
   map.addControl(layercontrol, {collapsed: false, position:'topleft'});
   var mapLegend = document.getElementById('map-legend');
   mapLegend.appendChild(layercontrol.getContainer());
+  L.DomEvent.on(layercontrol.getContainer(), 'click', L.DomEvent.stopPropagation);
   return layercontrol;
 }
 
