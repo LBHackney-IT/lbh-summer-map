@@ -192,23 +192,29 @@ $.ajax({
         loadLayers(mapConfig);
         }     
 });
+var bottomBar = document.getElementById('map-bottom-bar');
+var $bottomBar = $('.map-bottom-bar');
+var hammertime = new Hammer(bottomBar);
+hammertime.on('swipeup', function(ev) {
+	if (window.matchMedia('min-width: 768px').matches) {
+    return false;
+  } else {
+    $('.map-bottom-bar').addClass('map-bottom-bar--open');
+  }
+});
 
+hammertime.on('swipedown', function(ev) {
+  if (window.matchMedia('min-width: 768px').matches) {
+    return false;
+  } else {
+    $('.map-bottom-bar').removeClass('map-bottom-bar--open');
+  }
+});
 
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
-function debounce(func, wait, immediate) {
-	var timeout;
-	return function() {
-		var context = this, args = arguments;
-		var later = function() {
-			timeout = null;
-			if (!immediate) func.apply(context, args);
-		};
-		var callNow = immediate && !timeout;
-		clearTimeout(timeout);
-		timeout = setTimeout(later, wait);
-		if (callNow) func.apply(context, args);
-	};
-};
+$bottomBar.on('click', (e) => {
+  if (window.matchMedia('min-width: 768px').matches) {
+    return false;
+  } else {
+    $bottomBar.toggleClass('map-bottom-bar--open');
+  }
+});

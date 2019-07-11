@@ -67,13 +67,21 @@
             <div class="container">
                 <h1 class="page-title">Summer in Hackney</h1>
                 <div class="map-container">
-                    <div class="map-bottom-bar">
+                    <div class="map-bottom-bar" id="map-bottom-bar">
+                        <button class="map-bottom-bar-toggle">
+                            <span class="map-bottom-bar-toggle-text map-bottom-bar-toggle-text--close">Close</span>
+                            <img src="css/images/close.svg" alt="Close icon" class="map-bottom-bar-toggle-icon map-bottom-bar-toggle-icon--close" />
+                            <span class="map-bottom-bar-toggle-text map-bottom-bar-toggle-text--open">Open</span>
+                            <img src="css/images/up-arrow.svg" alt="Open icon" class="map-bottom-bar-toggle-icon map-bottom-bar-toggle-icon--open" />
+                        </button>
                         <span class="map-bottom-bar-heading">I want to&hellip;</span>
-                        <div id="map-personas" class="map-personas"></div>
-                        <sidebar class="map-controls">
-                            <div id="map-legend" class="map-legend">
-                            </div>
-                        </sidebar>
+                        <div class="map-bottom-bar-scroll">
+                            <div id="map-personas" class="map-personas"></div>
+                            <sidebar class="map-controls">
+                                <div id="map-legend" class="map-legend">
+                                </div>
+                            </sidebar>
+                        </div>
                     </div>
                     <div class="map-wrapper">
                         <div id="map"></div>
