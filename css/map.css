@@ -3,6 +3,10 @@
     
 }
 
+*:focus {
+  outline: 3px solid #FFBF47;
+}
+
 .page-title {
   margin-top: 70px;
   text-align: left;
@@ -234,10 +238,12 @@
 }
 
 .leaflet-control-layers-selector + span {
+  border: 3px solid transparent;
+  box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 20px 10px 10px;
+  padding: 17px 10px 7px;
 }
 
 .leaflet-control-layers-selector:checked + span {
@@ -256,6 +262,10 @@
   opacity: 0;
   padding-left: 42px;
   width: 100%;
+}
+
+.leaflet-control-layers-selector:focus + span {
+  border: 3px solid #FFBF47;
 }
 
 .leaflet-control-layers-selector:checked + span .control-count {
@@ -286,4 +296,9 @@
   .leaflet-control-layers-expanded .leaflet-control-layers-list {
     padding-right: 5px;
   }
+}
+
+.leaflet-control-layers-overlays label {
+  overflow: hidden;
+  position: relative;
 }
