@@ -118,6 +118,42 @@
   }
 }
 
+.map-bottom-bar {
+  background: white;
+  bottom: 0;
+  box-sizing: border-box;
+  height: 50px;
+  left: 0;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  transition: all 500ms;
+  z-index: 1;
+}
+
+.map-bottom-bar--open {
+  height: auto;
+  top: 30%;
+}
+
+.map-bottom-bar-heading {
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .map-bottom-bar {
+    background: none;
+    height: auto;
+    padding: 0;
+    position: static;
+  }
+
+  .map-bottom-bar-heading {
+      display: none;
+  }
+}
+
 .leaflet-control-layers {
   box-shadow: none;
   padding: 0;
