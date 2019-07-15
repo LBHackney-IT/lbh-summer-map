@@ -150,11 +150,16 @@
         "sortorder": "8",
         "icon": "table-tennis",
         "markercolour": "black",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
       {
         "title": "volleyball pitch",
@@ -164,25 +169,35 @@
         "sortorder": "1",
         "icon": "volleyball-ball",
         "markercolour": "grey",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
       {
-        "title": "padding pool",
-        "geoserverLayerName": "amenity:swimming_padding_pool",
+        "title": "paddling pool",
+        "geoserverLayerName": "amenity:swimming_paddling_pool",
         "groups": [ "children", "custom" ],
         "searchable": "false",
         "sortorder": "10",
         "icon": "water",
         "markercolour": "blue",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"link"
+            }
+          ]
         }
-
       },
       {
         "title": "swimming pool",
@@ -192,11 +207,16 @@
         "sortorder": "11",
         "icon": "swimmer",
         "markercolour": "blue",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"link"
+            }
+          ]
         }
-
       },
       {
         "title": "walking route",
@@ -234,11 +254,16 @@
         "sortorder": "13",
         "icon": "dumbbell",
         "markercolour": "green",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
       {
         "title": "local cycle network",
@@ -276,11 +301,16 @@
         "sortorder": "16",
         "icon": "tennis-ball",
         "markercolour": "green",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
       {
         "title": "basketball court",
@@ -290,11 +320,16 @@
         "sortorder": "17",
         "icon": "basketball-hoop",
         "markercolour": "green",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
       {
         "title": "football pitch",
@@ -304,11 +339,16 @@
         "sortorder": "18",
         "icon": "futbol",
         "markercolour": "green",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
       {
         "title": "cricket pitch",
@@ -318,11 +358,16 @@
         "sortorder": "19",
         "icon": "cricket",
         "markercolour": "green",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
       {
         "title": "rugby pitch",
@@ -332,11 +377,16 @@
         "sortorder": "20",
         "icon": "football-ball",
         "markercolour": "green",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
 
       {
@@ -347,11 +397,16 @@
         "sortorder": "22",
         "icon": "skating",
         "markercolour": "green",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
-
       },
       {
         "title": "BMX track",
@@ -361,9 +416,15 @@
         "sortorder": "23",
         "icon": "biking-mountain",
         "markercolour": "green",
-        "popup": {
+        "popup": 
+        {
           "popuptitlefield": "",
-          "popupfields": []
+          "popupfields":[
+            {
+              "fieldlabel":"",
+              "fieldname":"comments"
+            }
+          ]
         }
 
       }
