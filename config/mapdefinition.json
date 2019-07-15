@@ -6,33 +6,28 @@
     {
       "name": "hang out",
       "groupicon": "css/images/marker-icon.png",
-      "grouptext": "I want to hang out in the Park"
+      "grouptext": "Chilling"
     },
     {
       "name": "children",
       "groupicon": "css/images/marker-icon.png",
-      "grouptext": "I want to take the kids to play"  
+      "grouptext": "Playing"  
     },
     {
       "name": "run",
       "groupicon": "css/images/marker-icon.png",
-      "grouptext": "I want to go for a run"
-    },
-    {
-      "name": "walk",
-      "groupicon": "css/images/marker-icon.png",
-      "grouptext": "I want to go for a  walk with my dog"
+      "grouptext": "Wandering"
     },
     {
       "name": "custom",
       "groupicon": "css/images/marker-icon.png",
-      "grouptext": "I want to create my own summer in Hackney"
+      "grouptext": "Everything"
     }
   ],
   
   "layers": [
     {
-      "title": "picnic bench",
+      "title": "Picnic benches",
       "geoserverLayerName": "greenspaces:park_picnic_bench",
       "groups": [ "hang out", "children", "custom" ],
       "searchable": "false",
@@ -46,9 +41,9 @@
 
     },
         {
-          "title":"drinking fountain",
+          "title":"Drinking fountains",
           "geoserverLayerName":"greenspaces:Park_drinking_fountain",
-          "groups":["walk","run","custom"],
+          "groups":["hang out","run","custom"],
           "searchable": "false",
           "sortorder": "1",
           "icon":"tint",
@@ -60,9 +55,9 @@
           }
         },
     {
-      "title": "public toilet",
+      "title": "Toilets",
       "geoserverLayerName": "greenspaces:park_public_toilet",
-      "groups": [ "hang out", "run", "walk", "children", "custom" ],
+      "groups": [ "hang out", "run", "children", "custom" ],
       "searchable": "false",
       "sortorder": "2",
       "icon": "restroom",
@@ -73,7 +68,7 @@
       }
     },
     {
-      "title": "park playground",
+      "title": "Playgrounds",
       "geoserverLayerName": "greenspaces:park_playarea_point",
       "groups": [ "children", "custom" ],
       "searchable": "false",
@@ -86,21 +81,30 @@
       }
     },
     {
-      "title": "adventure playground",
+      "title": "Adventure playgrounds",
       "geoserverLayerName": "amenity:adventure_playground",
       "groups": [ "children", "custom" ],
       "searchable": "false",
       "sortorder": "4",
       "icon": "sledding",
       "markercolour": "black",
-      "popup": {
+      "popup": 
+      {
         "popuptitlefield": "",
-        "popupfields": []
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"name"
+          },
+          {
+            "fieldlabel":"",
+            "fieldname":"link"
+          }
+        ]
       }
-
     },
     {
-      "title": "estate playground",
+      "title": "Playgrounds",
       "geoserverLayerName": "housing:estate_playsite",
       "groups": [ "children", "custom" ],
       "searchable": "false",
@@ -114,9 +118,9 @@
 
     },
     {
-      "title": "bike parking",
+      "title": "Bike parking ",
       "geoserverLayerName": "greenspaces:park_cycle_stand",
-      "groups": [ "hang out", "custom" ],
+      "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "6",
       "icon": "parking-circle",
@@ -128,9 +132,9 @@
 
     },
     {
-      "title": "bike hire",
+      "title": "Bike hire",
       "geoserverLayerName": "greenspaces:park_cycle_hire",
-      "groups": [ "hang out", "custom" ],
+      "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "7",
       "icon": "bicycle",
@@ -142,7 +146,7 @@
 
     },
     {
-      "title": "ping pong table",
+      "title": "Table tennis",
       "geoserverLayerName": "amenity:sport_table_tennis",
       "groups": [ "hang out", "custom" ],
       "searchable": "false",
@@ -161,7 +165,7 @@
       }
     },
     {
-      "title": "volleyball pitch",
+      "title": "Volleyball",
       "geoserverLayerName": "amenity:sport_volley",
       "groups": [ "hang out", "custom" ],
       "searchable": "false",
@@ -180,7 +184,7 @@
       }
     },
     {
-      "title": "paddling pool",
+      "title": "Paddling pools",
       "geoserverLayerName": "amenity:swimming_paddling_pool",
       "groups": [ "children", "custom" ],
       "searchable": "false",
@@ -199,9 +203,9 @@
       }
     },
     {
-      "title": "swimming pool",
+      "title": "Swimming pools",
       "geoserverLayerName": "amenity:swimming_pool",
-      "groups": [ "custom" ],
+      "groups": [ "hang out","custom" ],
       "searchable": "false",
       "sortorder": "11",
       "icon": "swimmer",
@@ -218,9 +222,9 @@
       }
     },
     {
-      "title": "walking route",
+      "title": "Walking routes",
       "geoserverLayerName": "transport:hackney_walking_route",
-      "groups": [ "walk", "custom" ],
+      "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "12",
       "icon": "horizontal-rule",
@@ -237,7 +241,7 @@
       }
     },
     {
-      "title": "quietways",
+      "title": "Quietways",
       "geoserverLayerName": "transport:quietway",
       "groups": [ "run", "custom" ],
       "searchable": "false",
@@ -251,7 +255,7 @@
 
     },
     {
-      "title": "trim trail equipment",
+      "title": "Outdoor gyms",
       "geoserverLayerName": "amenity:sport_trimtrail",
       "groups": [ "run", "custom" ],
       "searchable": "false",
@@ -270,7 +274,7 @@
       }
     },
     {
-      "title": "local cycle network",
+      "title": "Bike routes",
       "geoserverLayerName": "transport:hackney_local_cycle_network",
       "groups": [ "run", "custom" ],
       "searchable": "false",
@@ -284,7 +288,7 @@
 
     },
     {
-      "title": "london cycle network plus",
+      "title": "Bike routes",
       "geoserverLayerName": "transport:london_cycle_network_plus",
       "groups": [ "run", "custom" ],
       "searchable": "false",
@@ -298,7 +302,7 @@
 
     },
     {
-      "title": "tennis court",
+      "title": "Tennis",
       "geoserverLayerName": "amenity:sport_tennis",
       "groups": [ "custom" ],
       "searchable": "false",
@@ -316,7 +320,7 @@
       }
     },
     {
-      "title": "basketball court",
+      "title": "Basketball",
       "geoserverLayerName": "amenity:sport_basketball",
       "groups": [ "custom" ],
       "searchable": "false",
@@ -334,7 +338,7 @@
       }
     },
     {
-      "title": "football pitch",
+      "title": "Football",
       "geoserverLayerName": "amenity:sport_football",
       "groups": [ "custom" ],
       "searchable": "false",
@@ -353,9 +357,9 @@
       }
     },
     {
-      "title": "cricket pitch",
+      "title": "Cricket",
       "geoserverLayerName": "amenity:sport_cricket",
-      "groups": [ "custom" ],
+      "groups": [ "hang out","custom" ],
       "searchable": "false",
       "sortorder": "19",
       "icon": "cricket",
@@ -372,7 +376,7 @@
       }
     },
     {
-      "title": "rugby pitch",
+      "title": "Rugby",
       "geoserverLayerName": "amenity:sport_rugby",
       "groups": [ "custom" ],
       "searchable": "false",
@@ -392,9 +396,9 @@
     },
 
     {
-      "title": "skate park",
+      "title": "Skatepark",
       "geoserverLayerName": "amenity:sport_skate",
-      "groups": [ "custom" ],
+      "groups": [ "children","custom" ],
       "searchable": "false",
       "sortorder": "22",
       "icon": "skating",
@@ -411,9 +415,9 @@
       }
     },
     {
-      "title": "BMX track",
+      "title": "BMX",
       "geoserverLayerName": "amenity:sport_bmx",
-      "groups": [ "custom" ],
+      "groups": [ "children","custom" ],
       "searchable": "false",
       "sortorder": "23",
       "icon": "biking-mountain",
