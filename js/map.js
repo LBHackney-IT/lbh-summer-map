@@ -55,14 +55,25 @@ var OSM_street = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.p
 map.addLayer(OSM_street);
 
 
-//add Hackney boundary
-var hackney_bdy_layer = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
-        layers: 'boundaries:hackney',
+// //add Hackney boundary
+// var hackney_bdy_layer = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
+//         layers: 'boundaries:hackney',
+//         transparent: true,
+//         format: 'image/png'
+      
+//       });
+// map.addLayer(hackney_bdy_layer);
+
+//add Hackney mask
+var hackney_mask = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
+        layers: 'boundaries:hackney_mask',
         transparent: true,
         format: 'image/png'
       
       });
-map.addLayer(hackney_bdy_layer);
+map.addLayer(hackney_mask);
+
+
 
 // -------------------------------------------------------------------------------------------------------------
 // NAVIGATIONS AND CONTROL TOOLS

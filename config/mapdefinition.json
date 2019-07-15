@@ -68,19 +68,6 @@
       }
     },
     {
-      "title": "Playgrounds",
-      "geoserverLayerName": "greenspaces:park_playarea_point",
-      "groups": [ "children", "custom" ],
-      "searchable": "false",
-      "sortorder": "3",
-      "icon": "child",
-      "markercolour": "green",
-      "popup": {
-        "popuptitlefield": "",
-        "popupfields": []
-      }
-    },
-    {
       "title": "Adventure playgrounds",
       "geoserverLayerName": "amenity:adventure_playground",
       "groups": [ "children", "custom" ],
@@ -102,20 +89,25 @@
           }
         ]
       }
-    },
+    }, 
     {
       "title": "Playgrounds",
-      "geoserverLayerName": "housing:estate_playsite",
+      "geoserverLayerName": "amenity:playground_park_estate_merge",
       "groups": [ "children", "custom" ],
       "searchable": "false",
       "sortorder": "100",
       "icon": "child",
       "markercolour": "blue",
-      "popup": {
+      "popup": 
+      {
         "popuptitlefield": "",
-        "popupfields": []
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"location"
+          }
+        ]
       }
-
     },
     {
       "title": "Bike parking ",
@@ -394,9 +386,8 @@
         ]
       }
     },
-
     {
-      "title": "Skatepark",
+      "title": "Skateparks",
       "geoserverLayerName": "amenity:sport_skate",
       "groups": [ "children","custom" ],
       "searchable": "false",
