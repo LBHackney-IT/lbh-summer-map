@@ -113,7 +113,7 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
 
   var configlayer = mapConfig.layers[i];
   //Live
-  var url="http://map.hackney.gov.uk/geoserver/wms?service=WFS&version=2.0&request=GetFeature&typeName="+configlayer.geoserverLayerName+"&outputFormat=json&SrsName=EPSG:4326";
+  var url="https://map.hackney.gov.uk/geoserver/ows?service=WFS&version=2.0&request=GetFeature&typeName="+configlayer.geoserverLayerName+"&outputFormat=json&SrsName=EPSG:4326";
   //Test
   //var url="http://lbhgiswebt01/geoserver/ows?service=WFS&version=2.0&request=GetFeature&typeName="+configlayer.geoserverLayerName+"&outputFormat=json&SrsName=EPSG:4326";
 
@@ -153,17 +153,17 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
         it will use the values as they were when the query was created, and not the values associated to 'current' i and j.
         */ 
         context: {
-        	configlayer: configlayer,
-          layercontrol: layercontrol,
-          overlayMaps: overlayMaps,
-          layerGroups: layerGroups,
-          layers: layers
-          //layername: mapConfig.layers[i].title,
+            configlayer: configlayer,
+            layercontrol: layercontrol,
+            overlayMaps: overlayMaps,
+            layerGroups: layerGroups,
+            layers: layers
+            //layername: mapConfig.layers[i].title,
         	//layergroup: mapConfig.layers[i].groups,
         	//markericon: mapConfig.layers[i].icon,
         	//markercolour: mapConfig.layers[i].markercolour,
-          //popuptitlefield: mapConfig.layers[i].popup.popuptitlefield,
-          //popupfields: mapConfig.layers[i].popup.popupfields
+            //popuptitlefield: mapConfig.layers[i].popup.popuptitlefield,
+            //popupfields: mapConfig.layers[i].popup.popupfields
         },
         
         //success: create a layer from json
@@ -226,7 +226,8 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
                     }                   
                   }                 
                 }
-                layer.bindPopup(stringpopup);
+                var popup = L.popup({ closeButton: false }).setContent(stringpopup);
+                layer.bindPopup(popup);
               },
               sortorder: sortorder
               

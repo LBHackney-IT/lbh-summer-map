@@ -171,7 +171,7 @@
       },
       {
         "title": "paddling pool",
-        "geoserverLayerName": "amenity:swimming_padding_pool",
+        "geoserverLayerName": "amenity:swimming_paddling_pool",
         "groups": [ "children", "custom" ],
         "searchable": "false",
         "sortorder": "10",
