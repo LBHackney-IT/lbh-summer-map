@@ -176,7 +176,8 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
             // var popupfields = this.popupfields;
             var layername = this.configlayer.title; // get from context
             var parentgroups = this.configlayer.groups;
-            var sortorder = parseInt(this.configlayer.sortorder);
+            //var sortorder = parseInt(this.configlayer.sortorder);
+            var sortorder = this.configlayer.title;
             var markericon = this.configlayer.icon;
             var markercolour = this.configlayer.markercolour;
             var popuptitlefield = this.configlayer.popup.popuptitlefield;
@@ -206,10 +207,10 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
                 var stringpopup = '';
                 // put the title field at the top of the popup in bold. If there is none in the config, just use the layer title instead
                 if (popuptitlefield != ''){
-                  stringpopup = '<b>'+feature.properties[popuptitlefield]+'</b>';
+                    stringpopup = '<center><b>'+feature.properties[popuptitlefield]+'</b></center>';
                 }
                 else {
-                  stringpopup = '<b>'+layername+'</b>';
+                    stringpopup = '<center><b>' + layername +'</b></center>';
                 }
                 //loop through the fields defined in the config and add them to the popup
                 for (var i in popupfields){
@@ -219,10 +220,10 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
                     if (feature.properties[popupfields[i].fieldname] != ''){
                       //if there is a label for this field in the config
                       if (popupfields[i].fieldlabel != ''){
-                          stringpopup = stringpopup + '<br> <span style="text-align:center"><b>' + popupfields[i].fieldlabel + '</b>: ' + feature.properties[popupfields[i].fieldname] + '</span>';
+                          stringpopup = stringpopup + '<br><center><b>' + popupfields[i].fieldlabel + '</b>: ' + feature.properties[popupfields[i].fieldname] + '</center>';
                       }
                       else {
-                          stringpopup = stringpopup + '<br> <span style="text-align:center">' + feature.properties[popupfields[i].fieldname] + '</span>';
+                          stringpopup = stringpopup + '<br><center>' + feature.properties[popupfields[i].fieldname] + '</center>';
                       }
                     }                   
                   }                 
@@ -255,15 +256,14 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
           //If yes, we can add the easybuttons and the layer controls for all groups 
           nbLoadedLayers ++;
           if (nbLoadedLayers == nbLayers){
-            //add the layer control and keep the javascript object
+            //add the layer control and keep the layercontrol javascript object
             var layercontrol = createControl(overlayMaps);
-            //var layercontrol = createEmptyControl();
+
             //create easy buttons for each group
             for (var n in layerGroups){
-              //createEasyButtons(layerGroups[n], layers, layercontrol, n);
-              createEasyButtons(layerGroups[n], layers, overlayMaps, layercontrol, n);
-            }
-            
+                //this function filters out layers in the layer control, showing only the relevant layers for this persona
+                createEasyButtons(layerGroups[n], layers, overlayMaps, layercontrol, n, true);
+            }           
           }
         }//end success    
       });//end ajax
@@ -271,8 +271,8 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
 }//end loadLayers
 
 
-//create controls for each group of layers. All the layers in all groups must have been loaded. 
-function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n){
+//create controls for each group of layers. All the layers in all groups must have been loaded. The last parameter is a boolean telling if all layers should stay in layer control or only the layers relevant to one group/persona
+function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, keepAllInLayerControl){
   var button = document.createElement('button');
   button.classList.add('persona-button');
   button.setAttribute('id', 'persona-button-' + n)
@@ -281,29 +281,28 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n){
   mapPersonas.appendChild(button);
   $('#persona-button-' + n).on('click', function(e){
     e.stopPropagation();
-    //Find the layer control, untick all layers and tick only the ones that are in that group 
+    //Untick all layers and tick only the ones that are in that group 
     for (var j in layers){
-      map.removeLayer(layers[j]);
-      //remove the corresponding entry in the layer control
-      layercontrol.removeLayer(layers[j]);
+        map.removeLayer(layers[j]);
+        //if the keep option is set to false, remove the corresponding entry in the layer control
+        if (!keepAllInLayerControl) {
+            layercontrol.removeLayer(layers[j]);
+        }
     }
     
     for (var k in layerGroup.layersInGroup){
       if (layerGroup.group != 'custom'){
         map.addLayer(layerGroup.layersInGroup[k]);
       }
-
-      for (var key in overlayMaps){
-
-        //if (overlayMaps.hasOwnProperty(key)){
-          //console.log(key, overlayMaps[key]);
+      // if the keep option is set to false, we now need to re-add the layers to the control
+      if (!keepAllInLayerControl) {
+        for (var key in overlayMaps) {
           if (overlayMaps[key] == layerGroup.layersInGroup[k]){
-                    console.log ("key = "+key);
+            console.log ("key = "+key);
             console.log("value = " + overlayMaps[key]);
             layercontrol.addOverlay(overlayMaps[key], key);
           } 
-        //}
-        
+        }        
       }
     }
   });
@@ -320,7 +319,8 @@ function createControl(overlayMaps){
         collapsed: false,
         sortLayers: true,
         sortFunction: function (a, b) {
-            return a.options.sortorder - b.options.sortorder;
+            //return a.options.sortorder - b.options.sortorder;
+            return a.options.sortorder.localeCompare(b.options.sortorder);
         }
     });
   map.addControl(layercontrol, {collapsed: false, position:'topleft'});
