@@ -186,8 +186,9 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
             var layerGroups = this.layerGroups;
             var layers = this.layers;
             var layer = new L.GeoJSON(data, { 
-                //set colour for lines
+                //set colour and dasharray for lines
                 color: leafletMarkerColours[markercolour],
+                dashArray: '4',
 
                 pointToLayer: function (feature, latlng) {      
                 //create marker 
@@ -205,10 +206,10 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
                 var stringpopup = '';
                 // put the title field at the top of the popup in bold. If there is none in the config, just use the layer title instead
                 if (popuptitlefield != ''){
-                  stringpopup = '<b><center>'+feature.properties[popuptitlefield]+'</center></b>';
+                  stringpopup = '<b>'+feature.properties[popuptitlefield]+'</b>';
                 }
                 else {
-                  stringpopup = '<b><center>'+layername+'</center></b>';
+                  stringpopup = '<b>'+layername+'</b>';
                 }
                 //loop through the fields defined in the config and add them to the popup
                 for (var i in popupfields){
@@ -218,10 +219,10 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
                     if (feature.properties[popupfields[i].fieldname] != ''){
                       //if there is a label for this field in the config
                       if (popupfields[i].fieldlabel != ''){
-                        stringpopup = stringpopup + '<br><b>'+popupfields[i].fieldlabel + '</b>: '+ feature.properties[popupfields[i].fieldname] ;
+                          stringpopup = stringpopup + '<br> <span style="text-align:center"><b>' + popupfields[i].fieldlabel + '</b>: ' + feature.properties[popupfields[i].fieldname] + '</span>';
                       }
                       else {
-                        stringpopup = stringpopup + '<br>'+ feature.properties[popupfields[i].fieldname] ;
+                          stringpopup = stringpopup + '<br> <span style="text-align:center">' + feature.properties[popupfields[i].fieldname] + '</span>';
                       }
                     }                   
                   }                 
