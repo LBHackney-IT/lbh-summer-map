@@ -1,433 +1,435 @@
 {
-    "mapid": "1",
-    "name": "Summer in Hackney",
-    "abstract": "What can you do in Hackney this summer? Choose an activity and see what's on offer.",
-    "layergroups": [
-      {
-        "name": "hang out",
-        "groupicon": "css/images/marker-icon.png",
-        "grouptext": "I want to hang out in the Park"
-      },
-      {
-        "name": "children",
-        "groupicon": "css/images/marker-icon.png",
-        "grouptext": "I want to take the kids to play"  
-      },
-      {
-        "name": "run",
-        "groupicon": "css/images/marker-icon.png",
-        "grouptext": "I want to go for a run"
-      },
-      {
-        "name": "walk",
-        "groupicon": "css/images/marker-icon.png",
-        "grouptext": "I want to go for a  walk with my dog"
-      },
-      {
-        "name": "custom",
-        "groupicon": "css/images/marker-icon.png",
-        "grouptext": "I want to create my own summer in Hackney"
+  "mapid": "1",
+  "name": "Summer in Hackney",
+  "abstract": "What can you do in Hackney this summer? Choose an activity and see what's on offer.",
+  "layergroups": [
+    {
+      "name": "hang out",
+      "groupicon": "css/images/marker-icon.png",
+      "grouptext": "I want to hang out in the Park"
+    },
+    {
+      "name": "children",
+      "groupicon": "css/images/marker-icon.png",
+      "grouptext": "I want to take the kids to play"  
+    },
+    {
+      "name": "run",
+      "groupicon": "css/images/marker-icon.png",
+      "grouptext": "I want to go for a run"
+    },
+    {
+      "name": "walk",
+      "groupicon": "css/images/marker-icon.png",
+      "grouptext": "I want to go for a  walk with my dog"
+    },
+    {
+      "name": "custom",
+      "groupicon": "css/images/marker-icon.png",
+      "grouptext": "I want to create my own summer in Hackney"
+    }
+  ],
+  
+  "layers": [
+    {
+      "title": "picnic bench",
+      "geoserverLayerName": "greenspaces:park_picnic_bench",
+      "groups": [ "hang out", "children", "custom" ],
+      "searchable": "false",
+      "sortorder": "30",
+      "icon": "shopping-basket",
+      "markercolour": "darkpurple",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
       }
-    ],
-    
-    "layers": [         
+
+    },
+        {
+          "title":"drinking fountain",
+          "geoserverLayerName":"greenspaces:Park_drinking_fountain",
+          "groups":["walk","run","custom"],
+          "searchable": "false",
+          "sortorder": "1",
+          "icon":"tint",
+          "markercolour":"blue",
+          "popup":
           {
-            "title": "picnic bench",
-            "geoserverLayerName": "greenspaces:park_picnic_bench",
-            "groups":["hang out", "children","custom"],
-            "searchable": "false",
-            "sortorder": "30",
-            "icon": "shopping-basket",
-            "markercolour": "red",
-            "popup":
-            {
-              "popuptitlefield": "",
-              "popupfields":[]
-            }
-
-          },
-          {
-            "title":"drinking fountain",
-            "geoserverLayerName":"greenspaces:Park_drinking_fountain",
-            "groups":["walk","run","custom"],
-            "searchable": "false",
-            "sortorder": "1",
-            "icon":"tint",
-            "markercolour":"blue",
-            "popup":
-            {
-              "popuptitlefield": "",
-              "popupfields":[]
-            }
-          },
-      {
-        "title": "public toilet",
-        "geoserverLayerName": "greenspaces:park_public_toilet",
-        "groups": [ "hang out", "run", "walk", "children", "custom" ],
-        "searchable": "false",
-        "sortorder": "2",
-        "icon": "restroom",
-        "markercolour": "orange",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-      },
-      {
-        "title": "park playground",
-        "geoserverLayerName": "greenspaces:park_playarea_point",
-        "groups": [ "children", "custom" ],
-        "searchable": "false",
-        "sortorder": "3",
-        "icon": "child",
-        "markercolour": "green",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-      },
-      {
-        "title": "adventure playground",
-        "geoserverLayerName": "amenity:adventure_playground",
-        "groups": [ "children", "custom" ],
-        "searchable": "false",
-        "sortorder": "4",
-        "icon": "sledding",
-        "markercolour": "black",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-
-      },
-      {
-        "title": "estate playground",
-        "geoserverLayerName": "housing:estate_playsite",
-        "groups": [ "children", "custom" ],
-        "searchable": "false",
-        "sortorder": "100",
-        "icon": "child",
-        "markercolour": "blue",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-
-      },
-      {
-        "title": "bike parking",
-        "geoserverLayerName": "greenspaces:park_cycle_stand",
-        "groups": [ "hang out", "custom" ],
-        "searchable": "false",
-        "sortorder": "6",
-        "icon": "parking-circle",
-        "markercolour": "green",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-
-      },
-      {
-        "title": "bike hire",
-        "geoserverLayerName": "greenspaces:park_cycle_hire",
-        "groups": [ "hang out", "custom" ],
-        "searchable": "false",
-        "sortorder": "7",
-        "icon": "bicycle",
-        "markercolour": "blue",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-
-      },
-      {
-        "title": "ping pong table",
-        "geoserverLayerName": "amenity:sport_table_tennis",
-        "groups": [ "hang out", "custom" ],
-        "searchable": "false",
-        "sortorder": "8",
-        "icon": "table-tennis",
-        "markercolour": "black",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-      {
-        "title": "volleyball pitch",
-        "geoserverLayerName": "amenity:sport_volley",
-        "groups": [ "hang out", "custom" ],
-        "searchable": "false",
-        "sortorder": "1",
-        "icon": "volleyball-ball",
-        "markercolour": "grey",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-      {
-        "title": "paddling pool",
-        "geoserverLayerName": "amenity:swimming_paddling_pool",
-        "groups": [ "children", "custom" ],
-        "searchable": "false",
-        "sortorder": "10",
-        "icon": "water",
-        "markercolour": "blue",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"link"
-            }
-          ]
-        }
-      },
-      {
-        "title": "swimming pool",
-        "geoserverLayerName": "amenity:swimming_pool",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "11",
-        "icon": "swimmer",
-        "markercolour": "blue",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"link"
-            }
-          ]
-        }
-      },
-      {
-        "title": "walking route",
-        "geoserverLayerName": "transport:hackney_walking_route",
-        "groups": [ "walk", "custom" ],
-        "searchable": "false",
-        "sortorder": "12",
-        "icon": "horizontal-rule",
-        "markercolour": "green",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-
-      },
-      {
-        "title": "quietways",
-        "geoserverLayerName": "transport:quietway",
-        "groups": [ "run", "custom" ],
-        "searchable": "false",
-        "sortorder": "31",
-        "icon": "horizontal-rule",
-        "markercolour": "blue",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-
-      },
-      {
-        "title": "trim trail equipment",
-        "geoserverLayerName": "amenity:sport_trimtrail",
-        "groups": [ "run", "custom" ],
-        "searchable": "false",
-        "sortorder": "13",
-        "icon": "dumbbell",
-        "markercolour": "green",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-      {
-        "title": "local cycle network",
-        "geoserverLayerName": "transport:hackney_local_cycle_network",
-        "groups": [ "run", "custom" ],
-        "searchable": "false",
-        "sortorder": "14",
-        "icon": "horizontal-rule",
-        "markercolour": "red",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-
-      },
-      {
-        "title": "london cycle network plus",
-        "geoserverLayerName": "transport:london_cycle_network_plus",
-        "groups": [ "run", "custom" ],
-        "searchable": "false",
-        "sortorder": "15",
-        "icon": "horizontal-rule",
-        "markercolour": "black",
-        "popup": {
-          "popuptitlefield": "",
-          "popupfields": []
-        }
-
-      },
-      {
-        "title": "tennis court",
-        "geoserverLayerName": "amenity:sport_tennis",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "16",
-        "icon": "tennis-ball",
-        "markercolour": "green",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-      {
-        "title": "basketball court",
-        "geoserverLayerName": "amenity:sport_basketball",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "17",
-        "icon": "basketball-hoop",
-        "markercolour": "green",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-      {
-        "title": "football pitch",
-        "geoserverLayerName": "amenity:sport_football",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "18",
-        "icon": "futbol",
-        "markercolour": "green",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-      {
-        "title": "cricket pitch",
-        "geoserverLayerName": "amenity:sport_cricket",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "19",
-        "icon": "cricket",
-        "markercolour": "green",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-      {
-        "title": "rugby pitch",
-        "geoserverLayerName": "amenity:sport_rugby",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "20",
-        "icon": "football-ball",
-        "markercolour": "green",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-
-      {
-        "title": "skate park",
-        "geoserverLayerName": "amenity:sport_skate",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "22",
-        "icon": "skating",
-        "markercolour": "green",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-      },
-      {
-        "title": "BMX track",
-        "geoserverLayerName": "amenity:sport_bmx",
-        "groups": [ "custom" ],
-        "searchable": "false",
-        "sortorder": "23",
-        "icon": "biking-mountain",
-        "markercolour": "green",
-        "popup": 
-        {
-          "popuptitlefield": "",
-          "popupfields":[
-            {
-              "fieldlabel":"",
-              "fieldname":"comments"
-            }
-          ]
-        }
-
+            "popuptitlefield": "",
+            "popupfields":[]
+          }
+        },
+    {
+      "title": "public toilet",
+      "geoserverLayerName": "greenspaces:park_public_toilet",
+      "groups": [ "hang out", "run", "walk", "children", "custom" ],
+      "searchable": "false",
+      "sortorder": "2",
+      "icon": "restroom",
+      "markercolour": "orange",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
       }
-            
+    },
+    {
+      "title": "park playground",
+      "geoserverLayerName": "greenspaces:park_playarea_point",
+      "groups": [ "children", "custom" ],
+      "searchable": "false",
+      "sortorder": "3",
+      "icon": "child",
+      "markercolour": "green",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+    },
+    {
+      "title": "adventure playground",
+      "geoserverLayerName": "amenity:adventure_playground",
+      "groups": [ "children", "custom" ],
+      "searchable": "false",
+      "sortorder": "4",
+      "icon": "sledding",
+      "markercolour": "black",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
+      "title": "estate playground",
+      "geoserverLayerName": "housing:estate_playsite",
+      "groups": [ "children", "custom" ],
+      "searchable": "false",
+      "sortorder": "100",
+      "icon": "child",
+      "markercolour": "blue",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
+      "title": "bike parking",
+      "geoserverLayerName": "greenspaces:park_cycle_stand",
+      "groups": [ "hang out", "custom" ],
+      "searchable": "false",
+      "sortorder": "6",
+      "icon": "parking-circle",
+      "markercolour": "green",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
+      "title": "bike hire",
+      "geoserverLayerName": "greenspaces:park_cycle_hire",
+      "groups": [ "hang out", "custom" ],
+      "searchable": "false",
+      "sortorder": "7",
+      "icon": "bicycle",
+      "markercolour": "blue",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
+      "title": "ping pong table",
+      "geoserverLayerName": "amenity:sport_table_tennis",
+      "groups": [ "hang out", "custom" ],
+      "searchable": "false",
+      "sortorder": "8",
+      "icon": "table-tennis",
+      "markercolour": "black",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
         ]
+      }
+    },
+    {
+      "title": "volleyball pitch",
+      "geoserverLayerName": "amenity:sport_volley",
+      "groups": [ "hang out", "custom" ],
+      "searchable": "false",
+      "sortorder": "1",
+      "icon": "volleyball-ball",
+      "markercolour": "grey",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+    {
+      "title": "paddling pool",
+      "geoserverLayerName": "amenity:swimming_paddling_pool",
+      "groups": [ "children", "custom" ],
+      "searchable": "false",
+      "sortorder": "10",
+      "icon": "water",
+      "markercolour": "blue",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"link"
+          }
+        ]
+      }
+    },
+    {
+      "title": "swimming pool",
+      "geoserverLayerName": "amenity:swimming_pool",
+      "groups": [ "custom" ],
+      "searchable": "false",
+      "sortorder": "11",
+      "icon": "swimmer",
+      "markercolour": "blue",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"link"
+          }
+        ]
+      }
+    },
+    {
+      "title": "walking route",
+      "geoserverLayerName": "transport:hackney_walking_route",
+      "groups": [ "walk", "custom" ],
+      "searchable": "false",
+      "sortorder": "12",
+      "icon": "horizontal-rule",
+      "markercolour": "green",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"link"
+          }
+        ]
+      }
+    },
+    {
+      "title": "quietways",
+      "geoserverLayerName": "transport:quietway",
+      "groups": [ "run", "custom" ],
+      "searchable": "false",
+      "sortorder": "31",
+      "icon": "horizontal-rule",
+      "markercolour": "blue",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
+      "title": "trim trail equipment",
+      "geoserverLayerName": "amenity:sport_trimtrail",
+      "groups": [ "run", "custom" ],
+      "searchable": "false",
+      "sortorder": "13",
+      "icon": "dumbbell",
+      "markercolour": "green",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+    {
+      "title": "local cycle network",
+      "geoserverLayerName": "transport:hackney_local_cycle_network",
+      "groups": [ "run", "custom" ],
+      "searchable": "false",
+      "sortorder": "14",
+      "icon": "horizontal-rule",
+      "markercolour": "darkblue",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
+      "title": "london cycle network plus",
+      "geoserverLayerName": "transport:london_cycle_network_plus",
+      "groups": [ "run", "custom" ],
+      "searchable": "false",
+      "sortorder": "15",
+      "icon": "horizontal-rule",
+      "markercolour": "blue",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
+      "title": "tennis court",
+      "geoserverLayerName": "amenity:sport_tennis",
+      "groups": [ "custom" ],
+      "searchable": "false",
+      "sortorder": "16",
+      "icon": "tennis-ball",
+      "markercolour": "orange",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+    {
+      "title": "basketball court",
+      "geoserverLayerName": "amenity:sport_basketball",
+      "groups": [ "custom" ],
+      "searchable": "false",
+      "sortorder": "17",
+      "icon": "basketball-hoop",
+      "markercolour": "orange",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+    {
+      "title": "football pitch",
+      "geoserverLayerName": "amenity:sport_football",
+      "groups": [ "custom" ],
+      "searchable": "false",
+      "sortorder": "18",
+      "icon": "futbol",
+      "markercolour": "green",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+    {
+      "title": "cricket pitch",
+      "geoserverLayerName": "amenity:sport_cricket",
+      "groups": [ "custom" ],
+      "searchable": "false",
+      "sortorder": "19",
+      "icon": "cricket",
+      "markercolour": "green",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+    {
+      "title": "rugby pitch",
+      "geoserverLayerName": "amenity:sport_rugby",
+      "groups": [ "custom" ],
+      "searchable": "false",
+      "sortorder": "20",
+      "icon": "football-ball",
+      "markercolour": "green",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+
+    {
+      "title": "skate park",
+      "geoserverLayerName": "amenity:sport_skate",
+      "groups": [ "custom" ],
+      "searchable": "false",
+      "sortorder": "22",
+      "icon": "skating",
+      "markercolour": "green",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+    {
+      "title": "BMX track",
+      "geoserverLayerName": "amenity:sport_bmx",
+      "groups": [ "custom" ],
+      "searchable": "false",
+      "sortorder": "23",
+      "icon": "biking-mountain",
+      "markercolour": "green",
+      "popup": 
+      {
+        "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+
+    }
+          
+      ]
 }
