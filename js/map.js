@@ -87,10 +87,13 @@ map.addLayer(hackney_mask);
 // -------------------------------------------------------------------------------------------------------------
 // NAVIGATIONS AND CONTROL TOOLS
 
-//ZOOM CONTROL - change zoom control to the right
-L.control.zoom({
-  position:'topright'
-}).addTo(map);
+//ZOOM CONTROL - change zoom control to the right and disable on mobile
+if (!L.Browser.mobile) {
+    L.control.zoom({
+        position: 'topright'
+    }).addTo(map);
+}
+
 
 // ZOOM TO CURRENT LOCATION - Zoom to current location tool using Locate
 

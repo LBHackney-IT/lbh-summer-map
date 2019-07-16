@@ -75,17 +75,12 @@
       "sortorder": "4",
       "icon": "sledding",
       "markercolour": "black",
-      "popup": 
-      {
-        "popuptitlefield": "",
-        "popupfields":[
+      "popup": {
+        "popuptitlefield": "name",
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"name"
-          },
-          {
-            "fieldlabel":"",
-            "fieldname":"link"
+            "fieldlabel": "",
+            "fieldname": "link"
           }
         ]
       }
@@ -185,7 +180,7 @@
       "markercolour": "blue",
       "popup": 
       {
-        "popuptitlefield": "",
+        "popuptitlefield": "name",
         "popupfields":[
           {
             "fieldlabel":"",
@@ -204,7 +199,7 @@
       "markercolour": "blue",
       "popup": 
       {
-        "popuptitlefield": "",
+        "popuptitlefield": "name",
         "popupfields":[
           {
             "fieldlabel":"",
@@ -239,7 +234,7 @@
       "searchable": "false",
       "sortorder": "31",
       "icon": "horizontal-rule",
-      "markercolour": "blue",
+      "markercolour": "purple",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -272,7 +267,7 @@
       "searchable": "false",
       "sortorder": "14",
       "icon": "horizontal-rule",
-      "markercolour": "darkblue",
+      "markercolour": "purple",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -286,7 +281,7 @@
       "searchable": "false",
       "sortorder": "15",
       "icon": "horizontal-rule",
-      "markercolour": "blue",
+      "markercolour": "purple",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
