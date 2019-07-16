@@ -1,14 +1,21 @@
-
 var map = L.map('map', {
-    zoomControl:false, maxZoom:22, minZoom:13,
+    zoomControl:false, maxZoom:19, minZoom:12,
     center: [51.5490, -0.077928], 
-    // maxBounds: [
-    //   //south west
-    //   [51.5118, -0.109045],
-    //   //north east
-    //   [51.590292, -0.034544]
-    //   ], 
     zoom: 13
+});
+
+// event that change the zoom level on mobile
+window.addEventListener('resize', function(event){
+  // get the width of the screen after the resize event
+  var width = document.documentElement.clientWidth;
+  if (width < 768) {
+      // set the zoom level to 12 on mobile
+      map.setZoom(12);
+  }  else {
+      // set the zoom level to 13. It is the default on desktop and tablets
+      map.setZoom(13);
+     
+  }
 });
 
 //Limit the view to the extend of the map
@@ -55,14 +62,16 @@ var OSM_street = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.p
 map.addLayer(OSM_street);
 
 
-// //add Hackney boundary
-// var hackney_bdy_layer = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
-//         layers: 'boundaries:hackney',
-//         transparent: true,
-//         format: 'image/png'
+/*We use hackney mask to style the boundary. If Hackney mask is removed, this layer will need to be added on the map. 
+//add Hackney boundary
+ var hackney_bdy_layer = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
+         layers: 'boundaries:hackney',
+         transparent: true,
+         format: 'image/png'
       
-//       });
-// map.addLayer(hackney_bdy_layer);
+       });
+ map.addLayer(hackney_bdy_layer);
+*/
 
 //add Hackney mask
 var hackney_mask = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
