@@ -40,20 +40,19 @@
       }
 
     },
-        {
-          "title":"Drinking fountains",
-          "geoserverLayerName":"greenspaces:Park_drinking_fountain",
-          "groups":["hang out","run","custom"],
-          "searchable": "false",
-          "sortorder": "1",
-          "icon":"tint",
-          "markercolour":"blue",
-          "popup":
-          {
-            "popuptitlefield": "",
-            "popupfields":[]
-          }
-        },
+    {
+      "title": "Drinking fountains",
+      "geoserverLayerName": "greenspaces:Park_drinking_fountain",
+      "groups": [ "hang out", "run", "custom" ],
+      "searchable": "false",
+      "sortorder": "1",
+      "icon": "tint",
+      "markercolour": "darkblue",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+    },
     {
       "title": "Toilets",
       "geoserverLayerName": "greenspaces:park_public_toilet",
@@ -61,7 +60,7 @@
       "searchable": "false",
       "sortorder": "2",
       "icon": "restroom",
-      "markercolour": "orange",
+      "markercolour": "lightblue",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -92,7 +91,7 @@
       "searchable": "false",
       "sortorder": "100",
       "icon": "child",
-      "markercolour": "blue",
+      "markercolour": "orange",
       "popup": 
       {
         "popuptitlefield": "",
@@ -111,7 +110,7 @@
       "searchable": "false",
       "sortorder": "6",
       "icon": "parking-circle",
-      "markercolour": "green",
+      "markercolour": "pink",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -125,7 +124,7 @@
       "searchable": "false",
       "sortorder": "7",
       "icon": "bicycle",
-      "markercolour": "blue",
+      "markercolour": "purple",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -139,14 +138,13 @@
       "searchable": "false",
       "sortorder": "8",
       "icon": "table-tennis",
-      "markercolour": "black",
-      "popup": 
-      {
+      "markercolour": "darkgreen",
+      "popup": {
         "popuptitlefield": "",
-        "popupfields":[
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "comments"
           }
         ]
       }
@@ -215,14 +213,13 @@
       "searchable": "false",
       "sortorder": "12",
       "icon": "horizontal-rule",
-      "markercolour": "green",
-      "popup": 
-      {
+      "markercolour": "cadetblue",
+      "popup": {
         "popuptitlefield": "",
-        "popupfields":[
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"link"
+            "fieldlabel": "",
+            "fieldname": "link"
           }
         ]
       }
@@ -234,7 +231,7 @@
       "searchable": "false",
       "sortorder": "31",
       "icon": "horizontal-rule",
-      "markercolour": "purple",
+      "markercolour": "orange",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -281,13 +278,13 @@
       "searchable": "false",
       "sortorder": "16",
       "icon": "tennis-ball",
-      "markercolour": "orange",
+      "markercolour": "beige",
       "popup": {
         "popuptitlefield": "",
-        "popupfields":[
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "comments"
           }
         ]
       }
@@ -317,7 +314,7 @@
       "searchable": "false",
       "sortorder": "18",
       "icon": "futbol",
-      "markercolour": "green",
+      "markercolour": "darkgreen",
       "popup": 
       {
         "popuptitlefield": "",
@@ -336,7 +333,7 @@
       "searchable": "false",
       "sortorder": "19",
       "icon": "cricket",
-      "markercolour": "green",
+      "markercolour": "red",
       "popup": 
       {
         "popuptitlefield": "",
@@ -355,7 +352,7 @@
       "searchable": "false",
       "sortorder": "20",
       "icon": "football-ball",
-      "markercolour": "green",
+      "markercolour": "cadetblue",
       "popup": 
       {
         "popuptitlefield": "",
@@ -374,7 +371,7 @@
       "searchable": "false",
       "sortorder": "22",
       "icon": "skating",
-      "markercolour": "green",
+      "markercolour": "darkpurple",
       "popup": 
       {
         "popuptitlefield": "",
@@ -393,7 +390,7 @@
       "searchable": "false",
       "sortorder": "23",
       "icon": "biking-mountain",
-      "markercolour": "green",
+      "markercolour": "darkred",
       "popup": 
       {
         "popuptitlefield": "",
