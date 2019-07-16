@@ -4,13 +4,22 @@ var map = L.map('map', {
     zoom: 13
 });
 
+
+//set correct initial view on mobile
+var width = document.documentElement.clientWidth;
+if (width < 768) {
+    // set the zoom level to 12 on mobile
+    //map.setZoom(11);
+    map.setView([51.5490, -0.059928], 11);
+}
+
 // event that change the zoom level on mobile
 window.addEventListener('resize', function(event){
   // get the width of the screen after the resize event
   var width = document.documentElement.clientWidth;
   if (width < 768) {
       // set the zoom level to 12 on mobile
-      map.setZoom(12);
+      map.setZoom(11);
   }  else {
       // set the zoom level to 13. It is the default on desktop and tablets
       map.setZoom(13);
@@ -19,7 +28,7 @@ window.addEventListener('resize', function(event){
 });
 
 //Limit the view to the extend of the map
- map.setMaxBounds(map.getBounds());
+ //map.setMaxBounds(map.getBounds());
 
 //SCALE - Add scale to the map 
 
@@ -105,14 +114,22 @@ var currentLocation = L.control.locate({
   }).addTo(map);
 
   // -------------------------------------------------------------------------------------------------------------
-  // ZOOM TO HACKNEY EXTENT - Zoom to Hackney Extent using easyButton
+  // ZOOM TO HACKNEY EXTENT - Zoom to Hackney Extent using easyButton (on desktop only)
 
-var ZoomToExtent = L.easyButton('fa-globe', function (btn, map) {
-    map.setView([51.5490, -0.077928],13);
-},
-{ position: 'topright' });
-//Add easy button Zoom to Extent to the map
-map.addControl(ZoomToExtent);
+if (!L.Browser.mobile) {
+    L.easyButton('fa-globe', function (btn, map) {
+        map.setView([51.5490, -0.077928], 13);
+        },
+        { position: 'topright' }
+    ).addTo(map);
+}
+
+//var ZoomToExtent = L.easyButton('fa-globe', function (btn, map) {
+//    map.setView([51.5490, -0.077928],13);
+//},
+//{ position: 'topright' });
+////Add easy button Zoom to Extent to the map
+//map.addControl(ZoomToExtent);
 
 // -------------------------------------------------------------------------------------------------------------
 /////Load config file and do everything that depends on configuration

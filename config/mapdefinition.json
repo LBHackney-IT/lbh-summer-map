@@ -262,24 +262,10 @@
     },
     {
       "title": "Bike routes",
-      "geoserverLayerName": "transport:hackney_local_cycle_network",
+      "geoserverLayerName": "transport:cycleway_hackney_london_osm_combined",
       "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "14",
-      "icon": "horizontal-rule",
-      "markercolour": "purple",
-      "popup": {
-        "popuptitlefield": "",
-        "popupfields": []
-      }
-
-    },
-    {
-      "title": "Bike routes",
-      "geoserverLayerName": "transport:london_cycle_network_plus",
-      "groups": [ "run", "custom" ],
-      "searchable": "false",
-      "sortorder": "15",
       "icon": "horizontal-rule",
       "markercolour": "purple",
       "popup": {
