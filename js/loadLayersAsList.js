@@ -57,7 +57,6 @@ var nbLoadedLayers = 0;
 
 //console.log('to load: '+ nbLayers);
 
-
 //
 var layer;
 var layers = [];
@@ -304,6 +303,10 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
           } 
         }        
       }
+    }
+
+    if (n == 3) {
+      $controls.addClass(CONTROLS_OPEN_CLASS);
     }
   });
     

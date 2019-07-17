@@ -239,6 +239,7 @@ $.ajax({
         }     
 });
 
+var CONTROLS_OPEN_CLASS = 'map-controls--open';
 var $sidebarToggle = $('.map-sidebar-toggle');
 var $controls = $('.map-controls');
 
@@ -246,6 +247,6 @@ $sidebarToggle.on('click', (e) => {
   if (window.matchMedia('min-width: 768px').matches) {
     return false;
   } else {
-    $controls.toggleClass('map-controls--open');
+    $controls.toggleClass(CONTROLS_OPEN_CLASS);
   }
 });
