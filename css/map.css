@@ -292,3 +292,7 @@ html, body, #map {
   overflow: hidden;
   position: relative;
 }
+
+.leaflet-popup-content {
+  font-family: Montserrat;
+}
