@@ -239,12 +239,13 @@ $.ajax({
         }     
 });
 
-var $bottomBar = $('.map-bottom-bar');
+var $sidebarToggle = $('.map-sidebar-toggle');
+var $controls = $('.map-controls');
 
-$bottomBar.on('click', (e) => {
+$sidebarToggle.on('click', (e) => {
   if (window.matchMedia('min-width: 768px').matches) {
     return false;
   } else {
-    $bottomBar.toggleClass('map-bottom-bar--open');
+    $controls.toggleClass('map-controls--open');
   }
 });
