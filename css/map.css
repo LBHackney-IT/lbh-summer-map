@@ -157,7 +157,7 @@
   .map-sidebar {
     border: none;
     height: 600px;
-    /* overflow: hidden; */
+    overflow: hidden;
     top: 0;
     transform: none;
     transition: none;
