@@ -250,3 +250,7 @@ $sidebarToggle.on('click', (e) => {
     $controls.toggleClass(CONTROLS_OPEN_CLASS);
   }
 });
+
+$('#map').on('click', () => {
+  $controls.removeClass(CONTROLS_OPEN_CLASS);
+});
