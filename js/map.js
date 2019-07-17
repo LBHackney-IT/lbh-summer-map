@@ -1,18 +1,34 @@
-
 var map = L.map('map', {
-    zoomControl:false, maxZoom:22, minZoom:13,
+    zoomControl:false, maxZoom:19, minZoom:12,
     center: [51.5490, -0.077928], 
-    // maxBounds: [
-    //   //south west
-    //   [51.5118, -0.109045],
-    //   //north east
-    //   [51.590292, -0.034544]
-    //   ], 
     zoom: 13
 });
 
+
+//set correct initial view on mobile
+var width = document.documentElement.clientWidth;
+if (width < 768) {
+    // set the zoom level to 12 on mobile
+    //map.setZoom(11);
+    map.setView([51.5490, -0.059928], 11);
+}
+
+// event that change the zoom level on mobile
+window.addEventListener('resize', function(event){
+  // get the width of the screen after the resize event
+  var width = document.documentElement.clientWidth;
+  if (width < 768) {
+      // set the zoom level to 12 on mobile
+      map.setZoom(11);
+  }  else {
+      // set the zoom level to 13. It is the default on desktop and tablets
+      map.setZoom(13);
+     
+  }
+});
+
 //Limit the view to the extend of the map
- map.setMaxBounds(map.getBounds());
+ //map.setMaxBounds(map.getBounds());
 
 //SCALE - Add scale to the map 
 
@@ -55,22 +71,38 @@ var OSM_street = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.p
 map.addLayer(OSM_street);
 
 
+/*We use hackney mask to style the boundary. If Hackney mask is removed, this layer will need to be added on the map. 
 //add Hackney boundary
-var hackney_bdy_layer = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
-        layers: 'boundaries:hackney',
+ var hackney_bdy_layer = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
+         layers: 'boundaries:hackney',
+         transparent: true,
+         format: 'image/png'
+      
+       });
+ map.addLayer(hackney_bdy_layer);
+*/
+
+//add Hackney mask
+var hackney_mask = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
+        layers: 'boundaries:hackney_mask',
         transparent: true,
         format: 'image/png'
       
       });
-map.addLayer(hackney_bdy_layer);
+map.addLayer(hackney_mask);
+
+
 
 // -------------------------------------------------------------------------------------------------------------
 // NAVIGATIONS AND CONTROL TOOLS
 
-//ZOOM CONTROL - change zoom control to the right
-L.control.zoom({
-  position:'topright'
-}).addTo(map);
+//ZOOM CONTROL - change zoom control to the right and disable on mobile
+if (!L.Browser.mobile) {
+    L.control.zoom({
+        position: 'topright'
+    }).addTo(map);
+}
+
 
 // ZOOM TO CURRENT LOCATION - Zoom to current location tool using Locate
 
@@ -82,14 +114,22 @@ var currentLocation = L.control.locate({
   }).addTo(map);
 
   // -------------------------------------------------------------------------------------------------------------
-  // ZOOM TO HACKNEY EXTENT - Zoom to Hackney Extent using easyButton
+  // ZOOM TO HACKNEY EXTENT - Zoom to Hackney Extent using easyButton (on desktop only)
 
-var ZoomToExtent = L.easyButton('fa-globe', function (btn, map) {
-    map.setView([51.5490, -0.077928],13);
-},
-{ position: 'topright' });
-//Add easy button Zoom to Extent to the map
-map.addControl(ZoomToExtent);
+if (!L.Browser.mobile) {
+    L.easyButton('fa-globe', function (btn, map) {
+        map.setView([51.5490, -0.077928], 13);
+        },
+        { position: 'topright' }
+    ).addTo(map);
+}
+
+//var ZoomToExtent = L.easyButton('fa-globe', function (btn, map) {
+//    map.setView([51.5490, -0.077928],13);
+//},
+//{ position: 'topright' });
+////Add easy button Zoom to Extent to the map
+//map.addControl(ZoomToExtent);
 
 // -------------------------------------------------------------------------------------------------------------
 /////Load config file and do everything that depends on configuration
