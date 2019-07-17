@@ -213,7 +213,7 @@
       "searchable": "false",
       "sortorder": "12",
       "icon": "horizontal-rule",
-      "markercolour": "cadetblue",
+      "markercolour": "green",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
@@ -249,6 +249,25 @@
       "popup": 
       {
         "popuptitlefield": "",
+        "popupfields":[
+          {
+            "fieldlabel":"",
+            "fieldname":"comments"
+          }
+        ]
+      }
+    },
+    {
+      "title": "Cafes in Parks",
+      "geoserverLayerName": "amenity:park_cafe",
+      "groups": [ "hang out", "custom" ],
+      "searchable": "false",
+      "sortorder": "13",
+      "icon": "coffee",
+      "markercolour": "orange",
+      "popup": 
+      {
+        "popuptitlefield": "location",
         "popupfields":[
           {
             "fieldlabel":"",
@@ -382,6 +401,20 @@
           }
         ]
       }
+    },
+    {
+      "title": "Waterway walks",
+      "geoserverLayerName": "transport:waterway_walk",
+      "groups": [ "run","custom" ],
+      "searchable": "false",
+      "sortorder": "22",
+      "icon": "horizontal-rule",
+      "markercolour": "cadetblue",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
     },
     {
       "title": "BMX",
