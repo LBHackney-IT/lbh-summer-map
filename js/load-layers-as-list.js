@@ -192,7 +192,8 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
         map.locate({
             setView: true,
             timeout: 5000,
-            maximumAge: 0
+            maximumAge: 0,
+            maxZoom: 11
         });
 
         //map.on('locationfound', function (e) {
