@@ -156,6 +156,18 @@ function loadLayers(mapConfig) {
           for (var i in layers) {
             map.removeLayer(layers[i]);
           }
+
+          $controls.removeClass(CONTROLS_OPEN_CLASS);
+          var width = document.documentElement.clientWidth;
+          if (width < 768) {
+            // set the zoom level to 12 on mobile
+            map.setZoom(11);
+            map.setView([51.5490, -0.059928], 11);
+          }  else {
+            // set the zoom level to 13. It is the default on desktop and tablets
+            map.setZoom(13);
+            map.setView([51.5490, -0.077928], 11);
+          }
         });
       }//end success    
     });//end ajax
