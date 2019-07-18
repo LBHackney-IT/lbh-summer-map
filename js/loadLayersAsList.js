@@ -47,8 +47,8 @@ var leafletMarkerColours = {
 //READ MAP CONFIG, LOAD ALL LAYERS, PUT THEM IN GROUPS, CREATE ONE LAYER CONTROL AND ONE EASYBUTTON PER GROUP
 
 function loadLayers(mapConfig){
-console.log(mapConfig.layergroups);
-console.log(mapConfig.layergroups.length);
+//console.log(mapConfig.layergroups);
+//console.log(mapConfig.layergroups.length);
 
 
 //count layers so we can tell if everything has been loaded later
@@ -199,7 +199,7 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
               },
 
               onEachFeature: function (feature, layer) {
-               console.log('feature read');
+               //console.log('feature read');
                 //here need to cretae a popup
                 //popupOptions = {maxWidth: 200};
                 
@@ -267,7 +267,9 @@ for (var i=0 ; i<mapConfig.layers.length ; i++){
         }//end success    
       });//end ajax
     } //end i
+
 }//end loadLayers
+
 
 
 //create controls for each group of layers. All the layers in all groups must have been loaded. The last parameter is a boolean telling if all layers should stay in layer control or only the layers relevant to one group/persona
@@ -281,7 +283,22 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
   mapPersonas.appendChild(button);
   $('#persona-button-' + n).on('click', function(e){
     e.stopPropagation();
-    //Untick all layers and tick only the ones that are in that group 
+
+
+    if (layerGroup.group == 'custom') {
+        map.locate({
+            setView: true,
+            timeout: 5000,
+            maximumAge: 0
+        });
+
+        map.on('locationfound', function (e) {
+            console.log('located but are you in Hackney?');
+        });
+
+    }
+
+     //Untick all layers and tick only the ones that are in that group
     for (var j in layers){
         map.removeLayer(layers[j]);
         //if the keep option is set to false, remove the corresponding entry in the layer control
@@ -291,26 +308,32 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
     }
     
     for (var k in layerGroup.layersInGroup){
-      if (layerGroup.group != 'custom'){
+        
+        //if (layerGroup.group != 'custom') {
+        //map.addLayer(layerGroup.layersInGroup[k]);
+        //}
+
         map.addLayer(layerGroup.layersInGroup[k]);
-      }
+
       // if the keep option is set to false, we now need to re-add the layers to the control
       if (!keepAllInLayerControl) {
         for (var key in overlayMaps) {
           if (overlayMaps[key] == layerGroup.layersInGroup[k]){
-            console.log ("key = "+key);
-            console.log("value = " + overlayMaps[key]);
+            //console.log ("key = "+key);
+            //console.log("value = " + overlayMaps[key]);
             layercontrol.addOverlay(overlayMaps[key], key);
           } 
         }        
       }
     }
+    
 
     if (n == 3) {
       $controls.addClass(CONTROLS_OPEN_CLASS);
     }
   });
-    
+
+  
     //add the single control we want
     //map.addControl(layerGroup.control);
     //alert ('I am the easybutton of ' + layerGroup.group)
