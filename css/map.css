@@ -58,6 +58,7 @@ html, body, #map {
   border-left: 8px solid rgba(11, 12, 12, 0.32);
   box-sizing: border-box;
   color: black;
+  cursor: pointer;
   display: block;
   height: 60px;
   flex-grow: 0;
