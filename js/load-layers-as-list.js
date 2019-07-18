@@ -187,7 +187,21 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
   mapPersonas.appendChild(button);
   $('#persona-button-' + n).on('click', function(e){
     e.stopPropagation();
-    //Untick all layers and tick only the ones that are in that group 
+
+    if (layerGroup.group == 'custom') {
+        map.locate({
+            setView: true,
+            timeout: 5000,
+            maximumAge: 0
+        });
+
+        //map.on('locationfound', function (e) {
+        //    console.log('located but are you in Hackney?');
+        //});
+
+    }
+
+    //Untick all layers and tick only the ones that are in that group
     for (var j in layers){
       map.removeLayer(layers[j]);
       //if the keep option is set to false, remove the corresponding entry in the layer control
@@ -197,9 +211,10 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
     }
     
     for (var k in layerGroup.layersInGroup){
-      if (layerGroup.group != 'custom'){
-        map.addLayer(layerGroup.layersInGroup[k]);
-      }
+      //if (layerGroup.group != 'custom'){
+      //  map.addLayer(layerGroup.layersInGroup[k]);
+      //}
+      map.addLayer(layerGroup.layersInGroup[k]);
       // if the keep option is set to false, we now need to re-add the layers to the control
       if (!keepAllInLayerControl) {
         for (var key in overlayMaps) {
