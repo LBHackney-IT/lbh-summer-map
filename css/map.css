@@ -29,7 +29,7 @@ html, body, #map {
 }
 
 .container {
-  margin: 0 20px;
+  padding: 0 18px;
   position: relative;
 }
 
@@ -37,6 +37,7 @@ html, body, #map {
   .container {
     max-width: 960px;
     margin: 0 auto;
+    padding: 0;
   }
 }
 
@@ -44,7 +45,7 @@ html, body, #map {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 12px 0;
 }
 
 @media (min-width: 768px) {
@@ -64,8 +65,8 @@ html, body, #map {
   flex-grow: 0;
   flex-shrink: 0;
   font-weight: 500;
-  margin-bottom: 10px;
-  padding: 10px;
+  margin-bottom: 8px;
+  padding: 12px;
   text-align: center;
   text-decoration: none;
   width: 48%;
@@ -77,7 +78,7 @@ html, body, #map {
     display: flex;
     flex-direction: column;
     margin-bottom: 0;
-    padding: 20px;
+    padding: 24px;
     width: 160px;
   }
 }
@@ -85,17 +86,6 @@ html, body, #map {
 .button-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-}
-
-.button-icon {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .button-icon {
-    display: block;
-    margin-bottom: 5px;
-  }
 }
 
 .map-container {
@@ -127,7 +117,7 @@ html, body, #map {
 
 .map-controls {
   display: block;
-  margin: 0 -20px;
+  margin: 0 -18px;
   padding: 0;
   position: relative;
   z-index: 1;
@@ -170,7 +160,7 @@ html, body, #map {
   appearance: none;
   background: none;
   border: none;
-  margin: 10px 20px 15px;
+  margin: 12px 18px;
   padding: 0;
 }
 
@@ -183,7 +173,7 @@ html, body, #map {
 
 .map-sidebar-toggle-icon {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 12px;
   vertical-align: middle;
 }
 
@@ -215,7 +205,7 @@ html, body, #map {
   font-size: 20px;
   line-height: 24px;
   position: absolute;
-  right: 20px;
+  right: 18px;
   top: 10px;
 }
 
@@ -250,15 +240,17 @@ html, body, #map {
 
 .leaflet-control-layers-selector + span {
   border: 3px solid transparent;
+  border-bottom: 1px solid #bfc1c3;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 17px 11px 7px;
+  padding: 17px 11px 9px;
 }
 
 .leaflet-control-layers-selector:checked + span {
   background: #eee;
+  border-bottom-color: #ffffff;
 }
 
 .control-text {
@@ -277,6 +269,7 @@ html, body, #map {
 
 .leaflet-control-layers-selector:focus + span {
   border: 3px solid #FFBF47;
+  padding-bottom: 7px;
 }
 
 .control-active-border {
