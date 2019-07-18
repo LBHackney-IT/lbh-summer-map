@@ -118,8 +118,8 @@
 
     },
     {
-      "title": "Bike hire",
-      "geoserverLayerName": "greenspaces:park_cycle_hire",
+      "title": "Bike hire station",
+      "geoserverLayerName": "transport:cycle_hire_station",
       "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "7",
@@ -127,7 +127,12 @@
       "markercolour": "purple",
       "popup": {
         "popuptitlefield": "",
-        "popupfields": []
+        "popupfields": [
+          {
+            "fieldlabel": "",
+            "fieldname": "name"
+          }
+        ]
       }
 
     },
