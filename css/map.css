@@ -45,6 +45,7 @@ html, body, #map {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 -18px;
   padding: 12px 0;
 }
 
@@ -57,29 +58,100 @@ html, body, #map {
 .persona-button {
   appearance: none;
   -webkit-appearance: none;
-  background: #f8f8f8;
+  background: #A4D65E;
   border: none;
+  border-left: 8px solid rgba(11, 12, 12, 0.32);
   box-sizing: border-box;
   color: black;
   display: block;
+  height: 60px;
   flex-grow: 0;
   flex-shrink: 0;
-  font-weight: 500;
-  margin-bottom: 8px;
-  padding: 12px;
-  text-align: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+  overflow: visible;
+  padding: 20px 24px 20px 16px;
+  position: relative;
+  text-align: left;
   text-decoration: none;
-  width: 48%;
+  width: 100%;
+}
+
+.persona-button:after {
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto 76px;
+  content: "";
+  display: block;
+  height: 76px;
+  position: absolute;
+  top: -8px;
+  width: 100%;
+}
+
+.persona-button:nth-child(1):after {
+  background-image: url('images/persona-chilling.png');
+  right: 4px;
+}
+
+.persona-button:nth-child(2):after {
+  background-image: url('images/persona-playing.png');
+  right: 3px;
+}
+
+.persona-button:nth-child(3):after {
+  background-image: url('images/persona-wandering.png');
+  right: 37px;
+}
+
+.persona-button:nth-child(4):after {
+  background-image: url('images/persona-everything.png');
+  right: 15px;
 }
 
 @media (min-width: 768px) {
   .persona-button {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    margin-right: 12px;
+    width: calc(50% - 6px);
+  }
+
+  .persona-button:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 980px) {
+  .persona-button {
+    font-size: 16px;
+    line-height: 16px;
     margin-bottom: 0;
-    padding: 24px;
-    width: 160px;
+    margin-right: 12px;
+    padding: 22px 24px;
+    width: 231px;
+  }
+
+  .persona-button:nth-child(2n) {
+    margin-right: 12px;
+  }
+
+  .persona-button:last-child {
+    margin-right: 0;
+  }
+
+  .persona-button:nth-child(1):after {
+    right: 0;
+  }
+  
+  .persona-button:nth-child(2):after {
+    right: 0;
+  }
+  
+  .persona-button:nth-child(3):after {
+    right: 3px;
+  }
+  
+  .persona-button:nth-child(4):after {
+    right: 11px;
   }
 }
 
