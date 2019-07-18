@@ -417,6 +417,34 @@
 
     },
     {
+      "title": "Bike pumps",
+      "geoserverLayerName": "transport:bike_pump",
+      "groups": [ "run","custom" ],
+      "searchable": "false",
+      "sortorder": "23",
+      "icon": "gas-pump",
+      "markercolour": "pink",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
+      "title": "Wildflower meadows",
+      "geoserverLayerName": "greenspaces:meadow",
+      "groups": [ "hang out","custom" ],
+      "searchable": "false",
+      "sortorder": "24",
+      "icon": "flower",
+      "markercolour": "green",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
+    },
+    {
       "title": "BMX",
       "geoserverLayerName": "amenity:sport_bmx",
       "groups": [ "children","custom" ],
