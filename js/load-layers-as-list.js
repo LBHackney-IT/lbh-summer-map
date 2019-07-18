@@ -197,6 +197,21 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
         }        
       }
     }
+    
+    $('html, body').animate({
+      scrollTop: $('#map').offset().top
+    }, 500, function() {
+      // Callback after animation
+      // Must change focus!
+      var $target = $('#map');
+      $target.focus();
+      if ($target.is(":focus")) { // Checking if the target was focused
+        return false;
+      } else {
+        $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+        $target.focus(); // Set focus again
+      };
+    });
   });    
 }
   
