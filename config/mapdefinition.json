@@ -422,7 +422,7 @@
       "groups": [ "run","custom" ],
       "searchable": "false",
       "sortorder": "23",
-      "icon": "gas-pump",
+      "icon": "tire-flat",
       "markercolour": "pink",
       "popup": {
         "popuptitlefield": "",
