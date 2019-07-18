@@ -151,6 +151,12 @@ function loadLayers(mapConfig) {
             createEasyButtons(layerGroups[n], layers, overlayMaps, layercontrol, n, true);
           }           
         }
+
+        $('#map-clear').on('click', () => {
+          for (var i in layers) {
+            map.removeLayer(layers[i]);
+          }
+        });
       }//end success    
     });//end ajax
   } //end i
