@@ -271,7 +271,7 @@ html, body, #map {
   font-size: 14px;
   font-weight: 600;
   opacity: 0;
-  padding-left: 42px;
+  padding-left: 46px;
   width: 100%;
 }
 
@@ -294,10 +294,11 @@ html, body, #map {
 }
 
 .leaflet-control-layers-selector + span .fas {
-  margin-top: 2px;
+  font-size: 20px;
+  margin-top: 1px;
   padding: 0 6px; 
   text-align: center;
-  width: 20px;
+  width: 24px;
 }
 
 .leaflet-control-layers-selector:not(:checked) + span .fas {
