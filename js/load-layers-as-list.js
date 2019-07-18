@@ -126,7 +126,7 @@ function loadLayers(mapConfig) {
         layers.push(layer);
         var count = layer.getLayers().length;
         //prepare entry for layercontrol
-        var legendEntry = '<i class="fas fa-'+markericon+'" style="color:' + leafletMarkerColours[markercolour] + '"></i><span class="control-text">'+ layername + '</span><span class="control-count">' + count + ' items shown</span>';
+        var legendEntry = '<span aria-hidden="true" class="control-active-border" style="background:' + leafletMarkerColours[markercolour] + '"></span><i class="fas fa-'+markericon+'" style="color:' + leafletMarkerColours[markercolour] + '"></i><span class="control-text">'+ layername + '</span><span class="control-count">' + count + ' items shown</span>';
         overlayMaps[legendEntry] = layer;
 
         //find the parent group(s) of this layer and add the layer to it

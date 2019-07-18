@@ -225,7 +225,6 @@ html, body, #map {
   }
 }
 
-
 .leaflet-control-layers {
   box-shadow: none;
   height: auto;
@@ -246,6 +245,7 @@ html, body, #map {
   display: block;
   padding: 20px;
   cursor: pointer;
+  position: relative;
 }
 
 .leaflet-control-layers-selector + span {
@@ -279,7 +279,17 @@ html, body, #map {
   border: 3px solid #FFBF47;
 }
 
-.leaflet-control-layers-selector:checked + span .control-count {
+.control-active-border {
+  bottom: -3px;
+  left: -3px;
+  opacity: 0;
+  position: absolute;
+  top: -3px;
+  width: 6px;
+}
+
+.leaflet-control-layers-selector:checked + span .control-count,
+.leaflet-control-layers-selector:checked + span .control-active-border {
   opacity: 1;
 }
 
