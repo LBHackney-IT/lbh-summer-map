@@ -196,6 +196,12 @@ html, body, #map {
   z-index: 1;
 }
 
+@media (min-width: 768px) {
+  .map-controls {
+    margin: 0;
+  }
+}
+
 .map-sidebar {
   background: #fff;
   border-right: 1px solid #00664F;
