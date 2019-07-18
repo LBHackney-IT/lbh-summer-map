@@ -29,7 +29,7 @@ html, body, #map {
 }
 
 .container {
-  margin: 0 20px;
+  padding: 0 18px;
   position: relative;
 }
 
@@ -37,6 +37,7 @@ html, body, #map {
   .container {
     max-width: 960px;
     margin: 0 auto;
+    padding: 0;
   }
 }
 
@@ -44,7 +45,8 @@ html, body, #map {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px 0;
+  margin: 0 -18px;
+  padding: 12px 0;
 }
 
 @media (min-width: 768px) {
@@ -56,46 +58,106 @@ html, body, #map {
 .persona-button {
   appearance: none;
   -webkit-appearance: none;
-  background: #f8f8f8;
+  background: #A4D65E;
   border: none;
+  border-left: 8px solid rgba(11, 12, 12, 0.32);
   box-sizing: border-box;
   color: black;
   display: block;
+  height: 60px;
   flex-grow: 0;
   flex-shrink: 0;
-  font-weight: 500;
-  margin-bottom: 10px;
-  padding: 10px;
-  text-align: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+  overflow: visible;
+  padding: 20px 24px 20px 16px;
+  position: relative;
+  text-align: left;
   text-decoration: none;
-  width: 48%;
+  width: 100%;
+}
+
+.persona-button:after {
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto 76px;
+  content: "";
+  display: block;
+  height: 76px;
+  position: absolute;
+  top: -8px;
+  width: 100%;
+}
+
+.persona-button:nth-child(1):after {
+  background-image: url('images/persona-chilling.png');
+  right: 4px;
+}
+
+.persona-button:nth-child(2):after {
+  background-image: url('images/persona-playing.png');
+  right: 3px;
+}
+
+.persona-button:nth-child(3):after {
+  background-image: url('images/persona-wandering.png');
+  right: 37px;
+}
+
+.persona-button:nth-child(4):after {
+  background-image: url('images/persona-everything.png');
+  right: 15px;
 }
 
 @media (min-width: 768px) {
   .persona-button {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+    margin-right: 12px;
+    width: calc(50% - 6px);
+  }
+
+  .persona-button:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 980px) {
+  .persona-button {
+    font-size: 16px;
+    line-height: 16px;
     margin-bottom: 0;
-    padding: 20px;
-    width: 160px;
+    margin-right: 12px;
+    padding: 22px 24px;
+    width: 231px;
+  }
+
+  .persona-button:nth-child(2n) {
+    margin-right: 12px;
+  }
+
+  .persona-button:last-child {
+    margin-right: 0;
+  }
+
+  .persona-button:nth-child(1):after {
+    right: 0;
+  }
+  
+  .persona-button:nth-child(2):after {
+    right: 0;
+  }
+  
+  .persona-button:nth-child(3):after {
+    right: 3px;
+  }
+  
+  .persona-button:nth-child(4):after {
+    right: 11px;
   }
 }
 
 .button-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-}
-
-.button-icon {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .button-icon {
-    display: block;
-    margin-bottom: 5px;
-  }
 }
 
 .map-container {
@@ -127,7 +189,7 @@ html, body, #map {
 
 .map-controls {
   display: block;
-  margin: 0 -20px;
+  margin: 0 -18px;
   padding: 0;
   position: relative;
   z-index: 1;
@@ -170,7 +232,7 @@ html, body, #map {
   appearance: none;
   background: none;
   border: none;
-  margin: 10px 20px 15px;
+  margin: 12px 18px;
   padding: 0;
 }
 
@@ -183,7 +245,7 @@ html, body, #map {
 
 .map-sidebar-toggle-icon {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 12px;
   vertical-align: middle;
 }
 
@@ -215,7 +277,7 @@ html, body, #map {
   font-size: 20px;
   line-height: 24px;
   position: absolute;
-  right: 20px;
+  right: 18px;
   top: 10px;
 }
 
@@ -250,15 +312,17 @@ html, body, #map {
 
 .leaflet-control-layers-selector + span {
   border: 3px solid transparent;
+  border-bottom: 1px solid #bfc1c3;
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 17px 11px 7px;
+  padding: 17px 11px 9px;
 }
 
 .leaflet-control-layers-selector:checked + span {
   background: #eee;
+  border-bottom-color: #ffffff;
 }
 
 .control-text {
@@ -277,6 +341,7 @@ html, body, #map {
 
 .leaflet-control-layers-selector:focus + span {
   border: 3px solid #FFBF47;
+  padding-bottom: 7px;
 }
 
 .control-active-border {
