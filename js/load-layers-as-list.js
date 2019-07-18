@@ -197,10 +197,6 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
         }        
       }
     }
-
-    if (n == 3) {
-      $controls.addClass(CONTROLS_OPEN_CLASS);
-    }
   });    
 }
   
