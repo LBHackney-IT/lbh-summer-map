@@ -36,7 +36,12 @@
       "markercolour": "darkpurple",
       "popup": {
         "popuptitlefield": "",
-        "popupfields": []
+        "popupfields": [
+          {
+            "fieldlabel": "",
+            "fieldname": "parkname"
+          }
+        ]
       }
 
     },
@@ -50,8 +55,14 @@
       "markercolour": "darkblue",
       "popup": {
         "popuptitlefield": "",
-        "popupfields": []
+        "popupfields": [
+          {
+            "fieldlabel": "",
+            "fieldname": "parkname"
+          }
+        ]
       }
+
     },
     {
       "title": "Toilets",
@@ -63,8 +74,14 @@
       "markercolour": "lightblue",
       "popup": {
         "popuptitlefield": "",
-        "popupfields": []
+        "popupfields": [
+          {
+            "fieldlabel": "",
+            "fieldname": "parkname"
+          }
+        ]
       }
+
     },
     {
       "title": "Adventure playgrounds",
@@ -118,7 +135,7 @@
 
     },
     {
-      "title": "Bike hire station",
+      "title": "Bike hire stations",
       "geoserverLayerName": "transport:cycle_hire_station",
       "groups": [ "run", "custom" ],
       "searchable": "false",
@@ -134,7 +151,6 @@
           }
         ]
       }
-
     },
     {
       "title": "Table tennis",
@@ -145,7 +161,7 @@
       "icon": "table-tennis",
       "markercolour": "darkgreen",
       "popup": {
-        "popuptitlefield": "",
+        "popuptitlefield": "location",
         "popupfields": [
           {
             "fieldlabel": "",
@@ -162,13 +178,12 @@
       "sortorder": "1",
       "icon": "volleyball-ball",
       "markercolour": "grey",
-      "popup": 
-      {
-        "popuptitlefield": "",
-        "popupfields":[
+      "popup": {
+        "popuptitlefield": "location",
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "comments"
           }
         ]
       }
@@ -304,7 +319,7 @@
       "icon": "tennis-ball",
       "markercolour": "beige",
       "popup": {
-        "popuptitlefield": "",
+        "popuptitlefield": "location",
         "popupfields": [
           {
             "fieldlabel": "",
@@ -321,12 +336,12 @@
       "sortorder": "17",
       "icon": "basketball-hoop",
       "markercolour": "orange",
-      "popup": {
-        "popuptitlefield": "",
-        "popupfields":[
+       "popup": {
+        "popuptitlefield": "location",
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "comments"
           }
         ]
       }
@@ -341,7 +356,7 @@
       "markercolour": "darkgreen",
       "popup": 
       {
-        "popuptitlefield": "",
+        "popuptitlefield": "location",
         "popupfields":[
           {
             "fieldlabel":"",
@@ -358,13 +373,12 @@
       "sortorder": "19",
       "icon": "cricket",
       "markercolour": "red",
-      "popup": 
-      {
-        "popuptitlefield": "",
-        "popupfields":[
+      "popup": {
+        "popuptitlefield": "location",
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "comments"
           }
         ]
       }
@@ -377,13 +391,12 @@
       "sortorder": "20",
       "icon": "football-ball",
       "markercolour": "cadetblue",
-      "popup": 
-      {
-        "popuptitlefield": "",
-        "popupfields":[
+      "popup": {
+        "popuptitlefield": "location",
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "comments"
           }
         ]
       }
@@ -396,13 +409,12 @@
       "sortorder": "22",
       "icon": "skating",
       "markercolour": "darkpurple",
-      "popup": 
-      {
-        "popuptitlefield": "",
-        "popupfields":[
+      "popup": {
+        "popuptitlefield": "location",
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "comments"
           }
         ]
       }
@@ -431,9 +443,13 @@
       "markercolour": "pink",
       "popup": {
         "popuptitlefield": "",
-        "popupfields": []
+        "popupfields": [
+          {
+            "fieldlabel": "",
+            "fieldname": "address"
+          }
+        ]
       }
-
     },
     {
       "title": "Wildflower meadows",
@@ -445,30 +461,15 @@
       "markercolour": "green",
       "popup": {
         "popuptitlefield": "",
-        "popupfields": []
-      }
-
-    },
-    {
-      "title": "BMX",
-      "geoserverLayerName": "amenity:sport_bmx",
-      "groups": [ "children","custom" ],
-      "searchable": "false",
-      "sortorder": "23",
-      "icon": "biking-mountain",
-      "markercolour": "darkred",
-      "popup": 
-      {
-        "popuptitlefield": "",
-        "popupfields":[
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "location"
           }
         ]
       }
 
     }
-          
+     
       ]
 }
