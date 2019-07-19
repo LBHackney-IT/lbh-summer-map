@@ -192,13 +192,14 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
         map.locate({
             setView: true,
             timeout: 5000,
-            maximumAge: 0,
-            maxZoom: 11
+            maximumAge: 0
+            //maxZoom: 16
         });
 
-        //map.on('locationfound', function (e) {
-        //    console.log('located but are you in Hackney?');
-        //});
+        map.on('locationfound', function (e) {
+            console.log('located but are you in Hackney?');
+            map.setZoom(16);
+        });
 
     }
 

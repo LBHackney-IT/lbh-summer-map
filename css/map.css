@@ -399,3 +399,25 @@ html, body, #map {
 .leaflet-popup-content {
   font-family: Montserrat;
 }
+
+.leaflet-touch .leaflet-bar a {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+}
+
+.leaflet-touch .leaflet-bar button {
+    width: 40px;
+    height: 40px;
+    line-height: 43px;
+}
+
+.fa-location:before {
+    content: "\f601";
+    font-size: 18px;
+}
+
+.fa-globe:before {
+    content: "\f0ac";
+    font-size: 18px;
+}
