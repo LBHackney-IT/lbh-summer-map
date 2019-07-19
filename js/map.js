@@ -48,7 +48,15 @@ var hackney_mask = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
 });
 map.addLayer(hackney_mask);
 
-
+//utility to clear all layers apart from those 2
+// Function to clear all map
+function clearMap() {
+    map.eachLayer(function (layer) {
+        if (layer != OSM_street & layer != hackney_mask) {
+            map.removeLayer(layer);
+        }
+    });
+}
 
 // -------------------------------------------------------------------------------------------------------------
 // NAVIGATIONS AND CONTROL TOOLS
@@ -81,30 +89,40 @@ var locateCircle = null;
 
 function onLocationFound(e) {
     console.log('located but are you in Hackney?');
-    //var radius = e.accuracy;
-    //L.marker(e.latlng).addTo(map);
     if (locateCircle != null) {
         map.removeLayer(locateCircle);
     }
     locateCircle = L.circleMarker(e.latlng).addTo(map);
 
     console.log(e.latlng);
-    var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
-    //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
+    //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
+    var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
     if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
         console.log('yes');
         map.setView([e.latlng.lat, e.latlng.lng], 16);
     }
     else {
         alert('Love Summer only covers Hackney');
-        if (width < 768) {
-            // set the zoom level to 12 on mobile
-            map.setView([51.5490, -0.059928], 11);
-        }
-        else {
-            // set the zoom level to 12 on mobile
-            map.setView([51.5490, -0.077928], 13);
-        }
+        //var winOpts = L.control.window(map,
+        //    {
+        //        content: 'Love Summer only covers Hackney',
+        //        visible: true,
+        //        position: 'middle',
+        //        closeButton: false,
+        //        modal: true,
+        //        prompt: {
+        //            buttonOK: 'OK',
+        //        }
+        //    });
+        //clearMap();
+        //if (width < 768) {
+        //    // set the zoom level to 12 on mobile
+        //    map.setView([51.5490, -0.059928], 11);
+        //}
+        //else {
+        //    // set the zoom level to 12 on mobile
+        //    map.setView([51.5490, -0.077928], 13);
+        //}
 
     }
 }
@@ -120,6 +138,8 @@ if (!L.Browser.mobile) {
     }, { position: 'topright' }
   ).addTo(map);
 }
+
+
 
 //Add map title in a separate div
 $.ajax({
