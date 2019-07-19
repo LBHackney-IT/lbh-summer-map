@@ -77,40 +77,40 @@ var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
 }, { position: 'topright' }
 ).addTo(map);
 
+var locateCircle = null;
 
 function onLocationFound(e) {
-    var radius = e.accuracy;
+    console.log('located but are you in Hackney?');
+    //var radius = e.accuracy;
     //L.marker(e.latlng).addTo(map);
-    L.circle(e.latlng, radius).addTo(map);
-    console.log('youhou'+e.latlng);
+    if (locateCircle != null) {
+        map.removeLayer(locateCircle);
+    }
+    locateCircle = L.circleMarker(e.latlng).addTo(map);
+
+    console.log(e.latlng);
+    var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
+    //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
+    if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
+        console.log('yes');
+        map.setView([e.latlng.lat, e.latlng.lng], 16);
+    }
+    else {
+        alert('Love Summer only covers Hackney');
+        if (width < 768) {
+            // set the zoom level to 12 on mobile
+            map.setView([51.5490, -0.059928], 11);
+        }
+        else {
+            // set the zoom level to 12 on mobile
+            map.setView([51.5490, -0.077928], 13);
+        }
+
+    }
 }
 
+
 map.on('locationfound', onLocationFound);
-
-
-//map.on('locationfound', function (e) {
-//          console.log('located but are you in Hackney?');
-//          map.setZoom(16);
-//          console.log(e.latlng);
-//          var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
-//          //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
-//          if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
-//              console.log('yes');
-//          }
-//          else {
-//              alert('Love Summer only covers Hackney');
-//              if (width < 768) {
-//                  // set the zoom level to 12 on mobile
-//                  map.setView([51.5490, -0.059928], 11);
-//              }
-//              else {
-//                  // set the zoom level to 12 on mobile
-//                  map.setView([51.5490, -0.077928], 13);
-//              }
-         
-//          }
-
-//        });
 
 // -------------------------------------------------------------------------------------------------------------
 // ZOOM TO HACKNEY EXTENT - Zoom to Hackney Extent using easyButton (on desktop only)
