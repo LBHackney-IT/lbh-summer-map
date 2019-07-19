@@ -193,7 +193,7 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
         //currentLocation.stopFollowing();
         //currentLocation.stop();
         map.locate({
-            setView: true,
+            setView: false,
             timeout: 5000,
             maximumAge: 0,
             maxZoom: 16
