@@ -189,15 +189,15 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
     e.stopPropagation();
 
     if (layerGroup.group == 'custom') {
-        currentLocation.start();
-        currentLocation.stopFollowing();
+        //currentLocation.start();
+        //currentLocation.stopFollowing();
         //currentLocation.stop();
-        //map.locate({
-        //    setView: true,
-        //    timeout: 5000,
-        //    maximumAge: 0
-        //    //maxZoom: 16
-        //});
+        map.locate({
+            setView: true,
+            timeout: 5000,
+            maximumAge: 0,
+            maxZoom: 16
+        });
 
         //map.on('locationfound', function (e) {
         //    console.log('located but are you in Hackney?');

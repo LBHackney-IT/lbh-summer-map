@@ -71,8 +71,8 @@ map.on('locationfound', function (e) {
           console.log('located but are you in Hackney?');
           map.setZoom(16);
           console.log(e.latlng);
-          //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
-          var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
+          var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
+          //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
           if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
               console.log('yes');
           }
