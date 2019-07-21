@@ -188,48 +188,86 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
   $('#persona-button-' + n).on('click', function(e){
     e.stopPropagation();
 
+     
+
+    //For custom layer only: geolocate and then switch group if in Hackney
     if (layerGroup.group == 'custom') {
-        //currentLocation.start();
-        //currentLocation.stopFollowing();
-        //currentLocation.stop();
+
+        //define listener
+        function onLocationFoundViaPersona(e) {
+            console.log('locationFound2');
+
+            //add marker
+            if (locateCircle != null) {
+                map.removeLayer(locateCircle);
+            }
+            locateCircle = L.circleMarker(e.latlng).addTo(map);
+
+            var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
+            //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
+            if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
+                console.log('yes, now I need to switch on layers');
+                map.setView([e.latlng.lat, e.latlng.lng], 16);
+                switchGroup();
+            }
+            else {
+                alert('Love Summer only covers Hackney');
+
+                //clearMap();
+                if (width < 768) {
+                    // set the zoom level to 12 on mobile
+                    map.setView([51.5490, -0.059928], 11);
+                }
+                else {
+                    // set the zoom level to 13 on desktop
+                    map.setView([51.5490, -0.077928], 13);
+                }
+            }
+            //remove listener
+            map.off('locationfound', onLocationFoundViaPersona);
+        }
+
+        //add listener
+        map.on('locationfound', onLocationFoundViaPersona);
+
         map.locate({
             setView: false,
             timeout: 5000,
             maximumAge: 0,
             maxZoom: 16
         });
-
-        //map.on('locationfound', function (e) {
-        //    console.log('located but are you in Hackney?');
-        //    map.setZoom(16);
-        //});
-
     }
 
-    //Untick all layers and tick only the ones that are in that group
-    for (var j in layers){
-      map.removeLayer(layers[j]);
-      //if the keep option is set to false, remove the corresponding entry in the layer control
-      if (!keepAllInLayerControl) {
-        layercontrol.removeLayer(layers[j]);
-      }
+    //for all groups except custom: just switch group
+    else {
+        switchGroup();
     }
-    
-    for (var k in layerGroup.layersInGroup){
-      //if (layerGroup.group != 'custom'){
-      //  map.addLayer(layerGroup.layersInGroup[k]);
-      //}
-      map.addLayer(layerGroup.layersInGroup[k]);
-      // if the keep option is set to false, we now need to re-add the layers to the control
-      if (!keepAllInLayerControl) {
-        for (var key in overlayMaps) {
-          if (overlayMaps[key] == layerGroup.layersInGroup[k]){
-            layercontrol.addOverlay(overlayMaps[key], key);
-          } 
-        }        
-      }
+
+    //bit of that switches the group
+    function switchGroup() {
+        //remove all layers 
+        for (var j in layers) {
+            map.removeLayer(layers[j]);
+            //if the keep option is set to false, remove the corresponding entry in the layer control
+            if (!keepAllInLayerControl) {
+                layercontrol.removeLayer(layers[j]);
+            }
+        }
+
+        //add layers from that group
+        for (var k in layerGroup.layersInGroup) {
+            map.addLayer(layerGroup.layersInGroup[k]);
+            // if the keep option is set to false, we now need to re-add the layers to the control
+            if (!keepAllInLayerControl) {
+                for (var key in overlayMaps) {
+                    if (overlayMaps[key] == layerGroup.layersInGroup[k]) {
+                        layercontrol.addOverlay(overlayMaps[key], key);
+                    }
+                }
+            }
+        }
     }
-    
+
     $('html, body').animate({
       scrollTop: $('#map-toggle').offset().top
     }, 500, function() {
@@ -246,6 +284,10 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
     });
   });    
 }
+
+
+
+
   
 function createControl(overlayMaps){
   layercontrol = new L.control.layers(null, overlayMaps, {
