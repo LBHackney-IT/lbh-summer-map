@@ -94,7 +94,7 @@
       "searchable": "false",
       "sortorder": "4",
       "icon": "sledding",
-      "markercolour": "black",
+      "markercolour": "red",
       "metadata": "",
       "popup": {
         "popuptitlefield": "name",
@@ -186,7 +186,7 @@
       "searchable": "false",
       "sortorder": "1",
       "icon": "volleyball-ball",
-      "markercolour": "grey",
+      "markercolour": "red",
       "metadata": "",
       "popup": {
         "popuptitlefield": "location",

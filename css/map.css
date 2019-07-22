@@ -258,7 +258,7 @@ html, body, #map {
 
     .map-container {
         position: relative;
-        margin-bottom: 60px;
+        margin-bottom: 48px;
     }
 
     .leaflet-control-layers-expanded .leaflet-control-layers-list {
@@ -340,7 +340,8 @@ html, body, #map {
 
     .map-sidebar-toggle-text {
         display: inline-block;
-        font-size: 20px;
+        font-size: 14px;
+        font-family: Montserrat;
         vertical-align: middle;
     }
 
@@ -369,18 +370,19 @@ html, body, #map {
         }
     }
 
-    .map-clear {
-        appearance: none;
-        -webkit-appearance: none;
-        background: none;
-        border: none;
-        display: inline-block;
-        font-size: 20px;
-        line-height: 24px;
-        position: absolute;
-        right: 18px;
-        top: 12px;
-    }
+.map-clear {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: Montserrat;
+    line-height: 24px;
+    position: absolute;
+    right: 18px;
+    top: 12px;
+}
 
     @media (min-width: 768px) {
         .map-clear {
@@ -407,7 +409,7 @@ html, body, #map {
     }
 
         .leaflet-control-layers-selector + span {
-            border-bottom: 1px solid #ccc;
+            border-bottom: 1px solid #DEE0E2;
             display: block;
             padding: 20px;
             cursor: pointer;
@@ -416,17 +418,18 @@ html, body, #map {
 
         .leaflet-control-layers-selector + span {
             border: 3px solid transparent;
-            border-bottom: 1px solid #bfc1c3;
+            border-bottom: 1px solid #DEE0E2;
             box-sizing: border-box;
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
             padding: 17px 11px 9px;
+            background: #F8F8F8;
         }
 
         .leaflet-control-layers-selector:checked + span {
-            background: #eee;
-            border-bottom-color: #ffffff;
+            background: #FFFFFF;
+            border-bottom-color: #DEE0E2;
         }
 
     .control-text {
@@ -437,7 +440,7 @@ html, body, #map {
 
     .control-count {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 300;
         opacity: 0;
         padding-left: 46px;
         width: 100%;
