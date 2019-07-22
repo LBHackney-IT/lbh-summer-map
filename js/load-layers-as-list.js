@@ -112,7 +112,7 @@ function loadLayers(mapConfig) {
 
         //if there is metadata for this layer in the config
             if (metadata != ''){
-               stringpopup = stringpopup + '<br><center><b>' + metadata + '</center>';
+               stringpopup = stringpopup + '<br><center>' + metadata + '</center>';
             }   
 
             //loop through the fields defined in the config and add them to the popup

@@ -246,7 +246,7 @@
       "sortorder": "12",
       "icon": "ellipsis-h",
       "markercolour": "green",
-      "metadata": "Walking routes that connect Hackney's parks and open spaces",
+      "metadata": "Walking routes that connect Hackney's parks and open spaces.",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
@@ -320,7 +320,7 @@
       "sortorder": "14",
       "icon": "ellipsis-h",
       "markercolour": "purple",
-      "metadata": "Cycling routes include London and local cycle networks and cyclable paths in parks",
+      "metadata": "Cycling routes include London and local cycle networks and cyclable paths in parks.",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
