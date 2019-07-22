@@ -70,15 +70,20 @@
                 <div id="map-personas" class="map-personas"></div>
                 <section id="map-controls" class="map-controls">
                     <button id="map-toggle" class="map-sidebar-toggle">
-                        <i class="fas fa-sliders-h map-sidebar-toggle-icon"></i>
+                        <i class="fal fa-sliders-h map-sidebar-toggle-icon"></i>
                         <span class="map-sidebar-toggle-text map-sidebar-toggle-text--hide">Hide</span>
                         <span class="map-sidebar-toggle-text map-sidebar-toggle-text--show">Show</span>
                     </button>
-                    <button class="map-clear" id="map-clear">Clear map</button>
-                    <sidebar class="map-sidebar">
-                        <div id="map-legend" class="map-legend"></div>
-                    </sidebar>
-                </section>
+                    <button id="map-clear" class="map-clear"> Clear map </button>
+
+                        <!--<button id="map-clear" class="map-sidebar-clear">
+        <i class="fal fa-times map-sidebar-clear-icon"></i>
+        <span class="map-sidebar-clear-text"><i style="font-size: 24px;" class="fal fa-times"></i>  Clear map</span>
+    </button>-->
+                        <sidebar class="map-sidebar">
+                            <div id="map-legend" class="map-legend"></div>
+                        </sidebar>
+</section>
                 <div class="map-wrapper">
                     <div id="map"></div>
                 </div>

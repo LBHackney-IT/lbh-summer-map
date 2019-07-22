@@ -370,6 +370,45 @@ html, body, #map {
         }
     }
 
+
+.map-sidebar-clear {
+    -webkit-appearance: none;
+    appearance: none;
+    background: none;
+    border: none;
+    margin: 12px 18px;
+    padding: 0;
+    align-content: right;
+}
+
+.map-sidebar-clear-text {
+    display: inline-block;
+    font-size: 14px;
+    font-family: Montserrat;
+    vertical-align: middle;
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: Montserrat;
+    line-height: 24px;
+    position: absolute;
+    right: 18px;
+    top: 12px;
+}
+
+.map-sidebar-clear-icon {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: -3px;
+    margin-right: 8px;
+    margin-top: 3px;
+    vertical-align: middle;
+}
+
 .map-clear {
     appearance: none;
     -webkit-appearance: none;
