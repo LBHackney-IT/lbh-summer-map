@@ -5,22 +5,22 @@
   "layergroups": [
     {
       "name": "hang out",
-      "groupicon": "css/images/marker-icon.png",
+      "groupicon": "css/images/lbh_icon_chilling.png",
       "grouptext": "Chilling"
     },
     {
       "name": "children",
-      "groupicon": "css/images/marker-icon.png",
+      "groupicon": "css/images/lbh_icon_playing.png",
       "grouptext": "Playing"  
     },
     {
       "name": "run",
-      "groupicon": "css/images/marker-icon.png",
+      "groupicon": "css/images/lbh_icon_wandering.png",
       "grouptext": "Wandering"
     },
     {
       "name": "custom",
-      "groupicon": "css/images/marker-icon.png",
+      "groupicon": "css/images/lbh_icon_everything.png",
       "grouptext": "Everything near me"
     }
   ],
