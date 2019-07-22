@@ -1,7 +1,7 @@
 {
   "mapid": "1",
   "name": "Hackney's Summer",
-  "abstract": "What can you do in Hackney this summer? Choose an activity and see what's on offer.",
+  "abstract": "Explore outdoor Hackney with our map",
   "layergroups": [
     {
       "name": "hang out",
@@ -27,6 +27,7 @@
   
   "layers": [
     {
+
       "title": "Picnic benches",
       "geoserverLayerName": "greenspaces:park_picnic_bench",
       "groups": [ "hang out", "children", "custom" ],
@@ -34,6 +35,7 @@
       "sortorder": "30",
       "icon": "shopping-basket",
       "markercolour": "darkpurple",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
@@ -53,6 +55,7 @@
       "sortorder": "1",
       "icon": "tint",
       "markercolour": "darkblue",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
@@ -72,6 +75,7 @@
       "sortorder": "2",
       "icon": "restroom",
       "markercolour": "lightblue",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
@@ -91,6 +95,7 @@
       "sortorder": "4",
       "icon": "sledding",
       "markercolour": "black",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "name",
         "popupfields": [
@@ -109,6 +114,7 @@
       "sortorder": "100",
       "icon": "child",
       "markercolour": "orange",
+      "metadata": "",
       "popup": 
       {
         "popuptitlefield": "",
@@ -121,13 +127,14 @@
       }
     },
     {
-      "title": "Bike parking ",
+      "title": "Cycle parking ",
       "geoserverLayerName": "greenspaces:park_cycle_stand",
       "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "6",
       "icon": "parking-circle",
       "markercolour": "pink",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -135,13 +142,14 @@
 
     },
     {
-      "title": "Bike hire stations",
+      "title": "Cycle hire stations",
       "geoserverLayerName": "transport:cycle_hire_station",
       "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "7",
       "icon": "bicycle",
       "markercolour": "purple",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
@@ -160,6 +168,7 @@
       "sortorder": "8",
       "icon": "table-tennis",
       "markercolour": "darkgreen",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "location",
         "popupfields": [
@@ -178,6 +187,7 @@
       "sortorder": "1",
       "icon": "volleyball-ball",
       "markercolour": "grey",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "location",
         "popupfields": [
@@ -196,6 +206,7 @@
       "sortorder": "10",
       "icon": "water",
       "markercolour": "blue",
+      "metadata": "",
       "popup": 
       {
         "popuptitlefield": "name",
@@ -215,6 +226,7 @@
       "sortorder": "11",
       "icon": "swimmer",
       "markercolour": "blue",
+      "metadata": "",
       "popup": 
       {
         "popuptitlefield": "name",
@@ -232,8 +244,9 @@
       "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "12",
-      "icon": "horizontal-rule",
+      "icon": "ellipsis-h",
       "markercolour": "green",
+      "metadata": "Walking routes that connect Hackney's parks and open spaces",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
@@ -250,8 +263,9 @@
       "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "31",
-      "icon": "horizontal-rule",
+      "icon": "ellipsis-h",
       "markercolour": "orange",
+      "metadata": "Quietways are continuous and convenient cycle routes on less-busy backstreets.The routes are clearly marked with purple signs to help cyclists find their way along roads",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -266,6 +280,7 @@
       "sortorder": "13",
       "icon": "dumbbell",
       "markercolour": "green",
+      "metadata": "",
       "popup": 
       {
         "popuptitlefield": "",
@@ -285,6 +300,7 @@
       "sortorder": "13",
       "icon": "coffee",
       "markercolour": "orange",
+      "metadata": "",
       "popup": 
       {
         "popuptitlefield": "location",
@@ -297,13 +313,14 @@
       }
     },
     {
-      "title": "Bike routes",
+      "title": "Cycling routes",
       "geoserverLayerName": "transport:cycleway_hackney_london_osm_combined",
       "groups": [ "run", "custom" ],
       "searchable": "false",
       "sortorder": "14",
-      "icon": "horizontal-rule",
+      "icon": "ellipsis-h",
       "markercolour": "purple",
+      "metadata": "Cycling routes include London Cycle Network, local routes and traffic-free routes",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -318,6 +335,7 @@
       "sortorder": "16",
       "icon": "tennis-ball",
       "markercolour": "beige",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "location",
         "popupfields": [
@@ -336,6 +354,7 @@
       "sortorder": "17",
       "icon": "basketball-hoop",
       "markercolour": "orange",
+      "metadata": "",
        "popup": {
         "popuptitlefield": "location",
         "popupfields": [
@@ -354,6 +373,7 @@
       "sortorder": "18",
       "icon": "futbol",
       "markercolour": "darkgreen",
+      "metadata": "",
       "popup": 
       {
         "popuptitlefield": "location",
@@ -373,6 +393,7 @@
       "sortorder": "19",
       "icon": "cricket",
       "markercolour": "red",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "location",
         "popupfields": [
@@ -391,6 +412,7 @@
       "sortorder": "20",
       "icon": "football-ball",
       "markercolour": "cadetblue",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "location",
         "popupfields": [
@@ -409,6 +431,7 @@
       "sortorder": "22",
       "icon": "skating",
       "markercolour": "darkpurple",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "location",
         "popupfields": [
@@ -425,8 +448,9 @@
       "groups": [ "run","custom" ],
       "searchable": "false",
       "sortorder": "22",
-      "icon": "horizontal-rule",
+      "icon": "ellipsis-h",
       "markercolour": "cadetblue",
+      "metadata": "Walks that connect Hackney's canals and rivers.  ",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -434,13 +458,14 @@
 
     },
     {
-      "title": "Bike pumps",
+      "title": "Cycle pumps",
       "geoserverLayerName": "transport:bike_pump",
       "groups": [ "run","custom" ],
       "searchable": "false",
       "sortorder": "23",
       "icon": "tire-flat",
       "markercolour": "pink",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
@@ -459,6 +484,7 @@
       "sortorder": "24",
       "icon": "flower",
       "markercolour": "green",
+      "metadata": "",
       "popup": {
         "popuptitlefield": "",
         "popupfields": [
