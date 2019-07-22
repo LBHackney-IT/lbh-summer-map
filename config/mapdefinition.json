@@ -6,22 +6,26 @@
     {
       "name": "hang out",
       "groupicon": "css/images/lbh_icon_chilling.png",
-      "grouptext": "Chilling"
+      "grouptext": "Chilling",
+      "alttext": "Show me where to chill in Hackney"
     },
     {
       "name": "children",
       "groupicon": "css/images/lbh_icon_playing.png",
-      "grouptext": "Playing"  
+      "grouptext": "Playing",  
+      "alttext": "Show me where to play in Hackney"
     },
     {
       "name": "run",
       "groupicon": "css/images/lbh_icon_wandering.png",
-      "grouptext": "Wandering"
+      "grouptext": "Wandering",
+      "alttext": "Show me where to wander in Hackney"
     },
     {
       "name": "custom",
       "groupicon": "css/images/lbh_icon_everything.png",
-      "grouptext": "Everything near me"
+      "grouptext": "Everything near me",
+      "alttext": "Show me everything in Hackney near me"
     }
   ],
   
