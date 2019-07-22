@@ -265,7 +265,7 @@
       "sortorder": "31",
       "icon": "ellipsis-h",
       "markercolour": "orange",
-      "metadata": "Quietways are continuous and convenient cycle routes on less-busy backstreets.The routes are clearly marked with purple signs to help cyclists find their way along roads",
+      "metadata": "Quietways are continuous and convenient cycle routes on less-busy backstreets. The routes are clearly marked with purple signs to help cyclists find their way along roads",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -320,7 +320,7 @@
       "sortorder": "14",
       "icon": "ellipsis-h",
       "markercolour": "purple",
-      "metadata": "Cycling routes include London Cycle Network, local routes and traffic-free routes",
+      "metadata": "Cycling routes include London and local cycle networks and cyclable paths in parks",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
@@ -450,7 +450,7 @@
       "sortorder": "22",
       "icon": "ellipsis-h",
       "markercolour": "cadetblue",
-      "metadata": "Walks that connect Hackney's canals and rivers.  ",
+      "metadata": "Walks that connect Hackney's canals and rivers.",
       "popup": {
         "popuptitlefield": "",
         "popupfields": []
