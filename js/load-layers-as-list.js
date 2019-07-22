@@ -78,6 +78,7 @@ function loadLayers(mapConfig) {
         var sortorder = this.configlayer.title;
         var markericon = this.configlayer.icon;
         var markercolour = this.configlayer.markercolour;
+        var metadata = this.configlayer.metadata;
         var popuptitlefield = this.configlayer.popup.popuptitlefield;
         var popupfields = this.configlayer.popup.popupfields;
         var layercontrol = this.layercontrol;
@@ -100,6 +101,11 @@ function loadLayers(mapConfig) {
               stringpopup = '<center><b>' + layername +'</b></center>';
             }
 
+        //if there is metadata for this layer in the config
+            if (metadata != ''){
+               stringpopup = stringpopup + '<br><center><b>' + metadata + '</center>';
+            }   
+
             //loop through the fields defined in the config and add them to the popup
             for (var i in popupfields){
               //if there are popup fields in the map config
@@ -114,7 +120,9 @@ function loadLayers(mapConfig) {
                       stringpopup = stringpopup + '<br><center>' + feature.properties[popupfields[i].fieldname] + '</center>';
                   }
                 }                   
-              }                 
+              }
+              
+
             }
             var popup = L.popup({ closeButton: false }).setContent(stringpopup);
             layer.bindPopup(popup);

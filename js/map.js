@@ -75,7 +75,6 @@ if (!L.Browser.mobile) {
 //}).addTo(map);
 
 var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
-
     //define listener
     function onLocationFoundViaControl(e) {
         console.log('locationfound1');
@@ -118,9 +117,9 @@ var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
         maximumAge: 0,
         maxZoom: 16
     });
-
-}, { position: 'topright' }
-).addTo(map);
+},'Show me where I am',{position: 'topright',}).addTo(map);
+// }, {position: 'topright',}
+//).addTo(map);
 
 var locateCircle = null;
 
@@ -133,8 +132,7 @@ var locateCircle = null;
 if (!L.Browser.mobile) {
   L.easyButton('fa-globe', function (btn, map) {
       map.setView([51.5490, -0.077928], 13);
-    }, { position: 'topright' }
-  ).addTo(map);
+    }, 'Zoom to all Hackney',{position: 'topright',}).addTo(map);
 }
 
 
