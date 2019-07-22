@@ -89,7 +89,16 @@ function loadLayers(mapConfig) {
           color: leafletMarkerColours[markercolour],
           dashArray: '4',
           pointToLayer: function (feature, latlng) {      
-            var marker = L.marker(latlng, {icon: L.AwesomeMarkers.icon({icon: markericon, prefix: 'fa', markerColor: markercolour, spin:false})});
+              var marker = L.marker(latlng, {
+                  icon: L.AwesomeMarkers.icon({ icon: markericon, prefix: 'fa', markerColor: markercolour, spin: false }),
+                  alt: layername
+              });
+              //var marker = L.marker(latlng, {
+                  
+              //    alt: layername
+              //});
+
+
             return marker;               
           },
           onEachFeature: function (feature, layer) { 
