@@ -26,7 +26,7 @@ window.addEventListener('resize', function(event){
 
 
 //SCALE - Add scale to the map 
-L.control.scale().addTo(map);
+//L.control.scale().addTo(map);
 
 
 var OSM_street = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
