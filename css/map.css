@@ -23,6 +23,16 @@ html, body, #map {
   }
 }
 
+
+    .lead-paragraph {
+        font-size: 16px;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.47;
+        letter-spacing: normal;
+        color: #000000;
+    }
+
 @media (min-width: 768px) {
     .lead-paragraph {
         font-size: 19px;
@@ -33,15 +43,6 @@ html, body, #map {
         color: #000000;
     }
 }
-
-    .lead-paragraph {
-        font-size: 24px;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.47;
-        letter-spacing: normal;
-        color: #000000;
-    }
 
     .container {
         padding: 0 18px;
@@ -438,7 +439,7 @@ html, body, #map {
 
     .control-count {
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 300;
         opacity: 0;
         padding-left: 46px;
         width: 100%;
