@@ -436,6 +436,8 @@ html, body, #map {
         box-sizing: border-box;
         max-width: calc(100% - 32px);
         padding-left: 10px;
+        font-size: 14px;
+        font-weight: 500;
     }
 
     .control-count {
