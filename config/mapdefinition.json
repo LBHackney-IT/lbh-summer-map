@@ -6,22 +6,26 @@
     {
       "name": "hang out",
       "groupicon": "css/images/lbh_icon_chilling.png",
-      "grouptext": "Chilling"
+      "grouptext": "Chilling",
+      "alt": "Chilling alt"
     },
     {
       "name": "children",
       "groupicon": "css/images/lbh_icon_playing.png",
-      "grouptext": "Playing"  
+      "grouptext": "Playing",
+      "alt": "Chilling alt"
     },
     {
       "name": "run",
       "groupicon": "css/images/lbh_icon_wandering.png",
-      "grouptext": "Wandering"
+      "grouptext": "Wandering",
+      "alt": "Chilling alt"
     },
     {
       "name": "custom",
       "groupicon": "css/images/lbh_icon_everything.png",
-      "grouptext": "Everything near me"
+      "grouptext": "Everything near me",
+      "alt": "Chilling alt"
     }
   ],
   
@@ -167,7 +171,7 @@
       "searchable": "false",
       "sortorder": "8",
       "icon": "table-tennis",
-      "markercolour": "darkgreen",
+      "markercolour": "orange",
       "metadata": "",
       "popup": {
         "popuptitlefield": "location",
@@ -299,15 +303,14 @@
       "searchable": "false",
       "sortorder": "13",
       "icon": "coffee",
-      "markercolour": "orange",
+      "markercolour": "cadetblue",
       "metadata": "",
-      "popup": 
-      {
+      "popup": {
         "popuptitlefield": "location",
-        "popupfields":[
+        "popupfields": [
           {
-            "fieldlabel":"",
-            "fieldname":"comments"
+            "fieldlabel": "",
+            "fieldname": "comments"
           }
         ]
       }
@@ -392,7 +395,7 @@
       "searchable": "false",
       "sortorder": "19",
       "icon": "cricket",
-      "markercolour": "red",
+      "markercolour": "green",
       "metadata": "",
       "popup": {
         "popuptitlefield": "location",

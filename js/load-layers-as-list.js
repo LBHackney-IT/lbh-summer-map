@@ -38,6 +38,7 @@ function loadLayers(mapConfig) {
       group: mapConfig.layergroups[i].name,
       groupIcon: mapConfig.layergroups[i].groupicon,
       groupText: mapConfig.layergroups[i].grouptext,
+      alt: mapConfig.layergroups[i].alt,
       collapsed: false,
       layersInGroup: [],
       groupEasyButton: null
@@ -198,8 +199,11 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
   button.classList.add('persona-button');
   button.setAttribute('id', 'persona-button-' + n);
   // reintroduce below line when adding in icons
-  button.innerHTML = '<span class="button-icon"><img height = 80px src=' + layerGroup.groupIcon + ' alt="' + '<br>' + layerGroup.groupText + '" /></span><span class="button-text">' + layerGroup.groupText + '</span>';
-  //button.innerHTML = '<span class="button-text">' + layerGroup.groupText + '</span>';
+  
+  button.innerHTML = '<span class="button-icon"><img height = 80px src="' + layerGroup.groupIcon + '" alt="'+ layerGroup.alt +'"/></span><span class="button-text">' + layerGroup.groupText + '</span>';
+  //button.innerHTML = '<span class="button-icon"><img height = 80px src="' + layerGroup.groupIcon + '"/></span><span class="button-text">' + layerGroup.groupText + '</span>';
+
+    //button.innerHTML = '<span class="button-text">' + layerGroup.groupText + '</span>';
   var mapPersonas = document.getElementById('map-personas');
   mapPersonas.appendChild(button);
   $('#persona-button-' + n).on('click', function(e){

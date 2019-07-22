@@ -218,7 +218,7 @@ html, body, #map {
     .persona-button {
         appearance: none;
         -webkit-appearance: none;
-        background: #F8F8F8;
+        background: #ECEBEB;
         border: 0.5px solid #DEE0E2;
         border-radius: 3px;
         box-sizing: border-box;
@@ -424,7 +424,7 @@ html, body, #map {
             flex-wrap: wrap;
             justify-content: flex-start;
             padding: 17px 11px 9px;
-            background: #F8F8F8;
+            background: #ECEBEB;
         }
 
         .leaflet-control-layers-selector:checked + span {
