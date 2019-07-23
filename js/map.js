@@ -111,6 +111,7 @@ var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
     //add listener
     //map.on('locationfound', onLocationFound2);
     map.on('locationfound', onLocationFoundViaControl);
+
     map.locate({
         setView: false,
         timeout: 5000,
@@ -121,11 +122,12 @@ var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
 // }, {position: 'topright',}
 //).addTo(map);
 
+
+//prepare marker and event for geolocation
 var locateCircle = null;
+map.on('locationerror', function (e) { alert(e.message); });
 
 
-
-//map.on('locationfound', onLocationFound);
 
 // -------------------------------------------------------------------------------------------------------------
 // ZOOM TO HACKNEY EXTENT - Zoom to Hackney Extent using easyButton (on desktop only)

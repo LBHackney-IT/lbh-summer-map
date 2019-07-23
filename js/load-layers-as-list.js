@@ -248,9 +248,9 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
             map.off('locationfound', onLocationFoundViaPersona);
         }
 
-        //add listeners
+        //add listener
         map.on('locationfound', onLocationFoundViaPersona);
-        map.on('locationerror', function (e) { alert(e.message); })
+
 
         map.locate({
             setView: false,
