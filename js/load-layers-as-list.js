@@ -216,7 +216,7 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
 
         //define listener
         function onLocationFoundViaPersona(e) {
-            console.log('locationFound2');
+            //console.log('locationFound2');
 
             //add marker
             if (locateCircle != null) {
@@ -227,7 +227,7 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
             var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
             //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
             if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
-                console.log('yes, now I need to switch on layers');
+                //console.log('yes, now I need to switch on layers');
                 map.setView([e.latlng.lat, e.latlng.lng], 16);
                 switchGroup();
             }

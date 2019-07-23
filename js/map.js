@@ -78,7 +78,7 @@ if (!L.Browser.mobile) {
 var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
     //define listener
     function onLocationFoundViaControl(e) {
-        console.log('locationfound1');
+        //console.log('locationfound1');
         if (locateCircle != null) {
             map.removeLayer(locateCircle);
         }
@@ -87,12 +87,12 @@ var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
         var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
         //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
         if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
-            console.log('yes');
+            //console.log('yes');
             map.setView([e.latlng.lat, e.latlng.lng], 16);
         }
         else {
             alert('Love Summer only covers Hackney');
-            console.log('no');
+            //console.log('no');
 
             //clearMap();
             if (width < 768) {
