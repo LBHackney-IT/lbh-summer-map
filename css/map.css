@@ -378,7 +378,6 @@ html, body, #map {
     border: none;
     margin: 12px 18px;
     padding: 0;
-    align-content: right;
 }
 
 .map-sidebar-clear-text {
