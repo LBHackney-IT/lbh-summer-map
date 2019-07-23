@@ -11,6 +11,7 @@ if (width < 768) {
   map.setView([51.5490, -0.059928], 11);
 }
 
+/*
 // event that change the zoom level on mobile
 window.addEventListener('resize', function(event){
   // get the width of the screen after the resize event
@@ -23,7 +24,7 @@ window.addEventListener('resize', function(event){
     map.setZoom(13);
   }
 });
-
+*/
 
 //SCALE - Add scale to the map 
 //L.control.scale().addTo(map);
