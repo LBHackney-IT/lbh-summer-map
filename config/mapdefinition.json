@@ -431,7 +431,7 @@
       }
     },
     {
-      "title": "Skateparks",
+      "title": "BMX & Skateparks",
       "geoserverLayerName": "amenity:sport_skate",
       "groups": [ "children","custom" ],
       "searchable": "false",
