@@ -63,6 +63,7 @@ function clearMap() {
 
     $controls.removeClass(CONTROLS_OPEN_CLASS);
     setZoom();
+    $('.persona-button--active').removeClass('persona-button--active');
 }
 
 // -------------------------------------------------------------------------------------------------------------
