@@ -108,7 +108,7 @@ var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
 //prepare marker and event for geolocation
 var locateCircle = null;
 map.on('locationerror', function (e) {
-    alert('Your position could not be identified. Please check the geolocation settings of your default browser');
+    alert('Love Summer cannot find your location. Please enable Location Services for your browser in Settings or try again outside of your office as your network may block geolocation.');
 });
 
 
