@@ -4,30 +4,24 @@ var map = L.map('map', {
   zoom: 13
 });
 
-//set correct initial view on mobile
-var width = document.documentElement.clientWidth;
-if (width < 768) {
-  // set the zoom level to 12 on mobile
+var isMobile = !window.matchMedia('(min-width: 768px)').matches;
+if (isMobile) {
   map.setView([51.5490, -0.059928], 11);
 }
 
-/*
-// event that change the zoom level on mobile
+// On resize if we switch between mobile and desktop views then rezoom/centre the map
 window.addEventListener('resize', function(event){
-  // get the width of the screen after the resize event
-  var width = document.documentElement.clientWidth;
-  if (width < 768) {
-    // set the zoom level to 12 on mobile
-    map.setZoom(11);
-  }  else {
-    // set the zoom level to 13. It is the default on desktop and tablets
-    map.setZoom(13);
+  var mq = window.matchMedia('(min-width: 768px)');
+  if (mq.matches && isMobile) {
+    // set the zoom level to 13 on desktop
+    map.setView([51.5490, -0.077928], 13);
+    isMobile = false;
+  }  else if (!mq.matches && !isMobile) {
+    // set the zoom level to 11 on mobile
+    map.setView([51.5490, -0.059928], 11);
+    isMobile = true;
   }
 });
-*/
-
-//SCALE - Add scale to the map 
-//L.control.scale().addTo(map);
 
 
 var OSM_street = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -49,6 +43,16 @@ var hackney_mask = L.tileLayer.wms("https://map.hackney.gov.uk/geoserver/wms", {
 });
 map.addLayer(hackney_mask);
 
+function setZoom() {
+  if (window.matchMedia('(min-width: 768px)').matches) {
+    // set the zoom level to 13 on desktop
+    map.setView([51.5490, -0.077928], 13);
+  }  else {
+    // set the zoom level to 11 on mobile
+    map.setView([51.5490, -0.059928], 11);
+  }
+}
+
 //utility to clear all layers except from basemapand hackney mask/boundary
 function clearMap() {
     map.eachLayer(function (layer) {
@@ -56,6 +60,9 @@ function clearMap() {
             map.removeLayer(layer);
         }
     });
+
+    $controls.removeClass(CONTROLS_OPEN_CLASS);
+    setZoom();
 }
 
 // -------------------------------------------------------------------------------------------------------------
@@ -66,19 +73,9 @@ if (!L.Browser.mobile) {
   L.control.zoom({position: 'topright'}).addTo(map);
 }
 
-
-// ZOOM TO CURRENT LOCATION - Zoom to current location tool using Locate
-//var currentLocation = L.control.locate({
-//    position: 'topright',
-//    strings: {
-//        title: "Zoom to my current location"
-//    }
-//}).addTo(map);
-
 var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
     //define listener
     function onLocationFoundViaControl(e) {
-        //console.log('locationfound1');
         if (locateCircle != null) {
             map.removeLayer(locateCircle);
         }
@@ -87,30 +84,16 @@ var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
         var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
         //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
         if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
-            //console.log('yes');
             map.setView([e.latlng.lat, e.latlng.lng], 16);
-        }
-        else {
+        } else {
             alert('Love Summer only covers Hackney');
-            //console.log('no');
-
-            //clearMap();
-            if (width < 768) {
-                // set the zoom level to 12 on mobile
-                map.setView([51.5490, -0.059928], 11);
-            }
-            else {
-                // set the zoom level to 13 on desktop
-                map.setView([51.5490, -0.077928], 13);
-            }
-
+            setZoom();
         }
         //stop listening
         map.off('locationfound', onLocationFoundViaControl);
     }
 
     //add listener
-    //map.on('locationfound', onLocationFound2);
     map.on('locationfound', onLocationFoundViaControl);
 
     map.locate({
@@ -120,8 +103,6 @@ var currentLocation2 = L.easyButton('fa-location', function (btn, map) {
         maxZoom: 16
     });
 },'Show me where I am',{position: 'topright',}).addTo(map);
-// }, {position: 'topright',}
-//).addTo(map);
 
 
 //prepare marker and event for geolocation
@@ -157,7 +138,7 @@ var $sidebarToggle = $('.map-sidebar-toggle');
 var $controls = $('.map-controls');
 
 $sidebarToggle.on('click', (e) => {
-  if (window.matchMedia('min-width: 768px').matches) {
+  if (window.matchMedia('(min-width: 768px)').matches) {
     return false;
   } else {
     $controls.toggleClass(CONTROLS_OPEN_CLASS);

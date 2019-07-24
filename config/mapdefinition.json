@@ -7,25 +7,25 @@
       "name": "hang out",
       "groupicon": "css/images/lbh_icon_chilling.png",
       "grouptext": "Chilling",
-      "alt": "Show me where to chill in Hackney"
+      "alt": "Two people lying in the park with their dog"
     },
     {
       "name": "children",
       "groupicon": "css/images/lbh_icon_playing.png",
       "grouptext": "Playing",
-      "alt": "Show me where to play in Hackney"
+      "alt": "Child going down a slide"
     },
     {
       "name": "run",
       "groupicon": "css/images/lbh_icon_wandering.png",
       "grouptext": "Wandering",
-      "alt": "Show me where to wander in Hackney"
+      "alt": "Two people cycling on a tandem bike"
     },
     {
       "name": "custom",
       "groupicon": "css/images/lbh_icon_everything.png",
       "grouptext": "Everything near me",
-      "alt": "Show me everything in Hackney near me"
+      "alt": "A woman dancing in the park"
     }
   ],
   

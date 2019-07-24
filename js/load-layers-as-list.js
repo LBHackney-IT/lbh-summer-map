@@ -94,12 +94,6 @@ function loadLayers(mapConfig) {
                   icon: L.AwesomeMarkers.icon({ icon: markericon, prefix: 'fa', markerColor: markercolour, spin: false }),
                   alt: layername
               });
-              //var marker = L.marker(latlng, {
-                  
-              //    alt: layername
-              //});
-
-
             return marker;               
           },
           onEachFeature: function (feature, layer) { 
@@ -131,8 +125,6 @@ function loadLayers(mapConfig) {
                   }
                 }                   
               }
-              
-
             }
             var popup = L.popup({ closeButton: false }).setContent(stringpopup);
             layer.bindPopup(popup);
@@ -171,21 +163,7 @@ function loadLayers(mapConfig) {
         }
 
         $('#map-clear').on('click', () => {
-          for (var i in layers) {
-            map.removeLayer(layers[i]);
-          }
-
-          $controls.removeClass(CONTROLS_OPEN_CLASS);
-          var width = document.documentElement.clientWidth;
-          if (width < 768) {
-            // set the zoom level to 12 on mobile
-            map.setZoom(11);
-            map.setView([51.5490, -0.059928], 11);
-          }  else {
-            // set the zoom level to 13. It is the default on desktop and tablets
-            map.setZoom(13);
-            map.setView([51.5490, -0.077928], 11);
-          }
+          clearMap();
         });
       }//end success    
     });//end ajax
@@ -201,23 +179,16 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
   // reintroduce below line when adding in icons
   
   button.innerHTML = '<span class="button-icon"><img height = 80px src="' + layerGroup.groupIcon + '" alt="'+ layerGroup.alt +'"/></span><span class="button-text">' + layerGroup.groupText + '</span>';
-  //button.innerHTML = '<span class="button-icon"><img height = 80px src="' + layerGroup.groupIcon + '"/></span><span class="button-text">' + layerGroup.groupText + '</span>';
-
-    //button.innerHTML = '<span class="button-text">' + layerGroup.groupText + '</span>';
   var mapPersonas = document.getElementById('map-personas');
   mapPersonas.appendChild(button);
   $('#persona-button-' + n).on('click', function(e){
-    e.stopPropagation();
-
-     
+    e.stopPropagation();     
 
     //For custom layer only: geolocate and then switch group if in Hackney
     if (layerGroup.group == 'custom') {
 
         //define listener
         function onLocationFoundViaPersona(e) {
-            //console.log('locationFound2');
-
             //add marker
             if (locateCircle != null) {
                 map.removeLayer(locateCircle);
@@ -225,24 +196,13 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
             locateCircle = L.circleMarker(e.latlng).addTo(map);
 
             var hackneyBounds = L.bounds([51.517787, -0.097059], [51.580648, -0.009090]);
-            //var hackneyBounds = L.bounds([51.517787, -0.097059], [51.518, -0.096]);
             if (hackneyBounds.contains([e.latlng.lat, e.latlng.lng])) {
-                //console.log('yes, now I need to switch on layers');
                 map.setView([e.latlng.lat, e.latlng.lng], 16);
                 switchGroup();
-            }
-            else {
+            } else {
                 alert('Love Summer only covers Hackney');
 
-                //clearMap();
-                if (width < 768) {
-                    // set the zoom level to 12 on mobile
-                    map.setView([51.5490, -0.059928], 11);
-                }
-                else {
-                    // set the zoom level to 13 on desktop
-                    map.setView([51.5490, -0.077928], 13);
-                }
+                clearMap();
             }
             //remove listener
             map.off('locationfound', onLocationFoundViaPersona);
@@ -251,17 +211,13 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
         //add listener
         map.on('locationfound', onLocationFoundViaPersona);
 
-
         map.locate({
             setView: false,
             timeout: 5000,
             maximumAge: 0,
             maxZoom: 16
         });
-    }
-
-    //for all groups except custom: just switch group
-    else {
+    } else {
         switchGroup();
     }
 
