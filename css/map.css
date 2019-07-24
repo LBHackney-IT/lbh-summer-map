@@ -70,6 +70,15 @@ html, body, #map {
     color: #0072ce;
 }
 
+.link-before-footer a:hover,
+.link-before-footer a:focus {
+    color: #0085CA;
+}
+
+.link-before-footer a:visited {
+    color: #8031A7;
+}
+
 .map-personas {
     display: flex;
     flex-wrap: wrap;
