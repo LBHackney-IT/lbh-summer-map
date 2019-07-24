@@ -37,6 +37,7 @@ function loadLayers(mapConfig) {
     layergroup = {
       group: mapConfig.layergroups[i].name,
       groupIcon: mapConfig.layergroups[i].groupicon,
+      groupIconActive: mapConfig.layergroups[i].groupiconactive,
       groupText: mapConfig.layergroups[i].grouptext,
       alt: mapConfig.layergroups[i].alt,
       collapsed: false,
@@ -178,11 +179,12 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
   button.setAttribute('id', 'persona-button-' + n);
   // reintroduce below line when adding in icons
   
-  button.innerHTML = '<span class="button-icon"><img height = 80px src="' + layerGroup.groupIcon + '" alt="'+ layerGroup.alt +'"/></span><span class="button-text">' + layerGroup.groupText + '</span>';
+  button.innerHTML = '<span class="button-icon"><img class="persona-icon" height = 80px src="' + layerGroup.groupIcon + '" alt="'+ layerGroup.alt +'"/><img class="persona-icon-active" height = 80px src="' + layerGroup.groupIconActive + '" alt="'+ layerGroup.alt +'"/></span><span class="button-text">' + layerGroup.groupText + '</span>';
   var mapPersonas = document.getElementById('map-personas');
   mapPersonas.appendChild(button);
   $('#persona-button-' + n).on('click', function(e){
-    e.stopPropagation();     
+    e.stopPropagation();
+    $(this).addClass('persona-button--active').siblings().removeClass('persona-button--active');
 
     //For custom layer only: geolocate and then switch group if in Hackney
     if (layerGroup.group == 'custom') {
@@ -278,7 +280,10 @@ function createControl(overlayMaps){
   map.addControl(layercontrol, {collapsed: false, position:'topleft'});
   var mapLegend = document.getElementById('map-legend');
   mapLegend.appendChild(layercontrol.getContainer());
-  L.DomEvent.on(layercontrol.getContainer(), 'click', L.DomEvent.stopPropagation);
+  L.DomEvent.on(layercontrol.getContainer(), 'click', function() {
+    L.DomEvent.stopPropagation;
+    $('.persona-button--active').removeClass('persona-button--active');
+  });
   return layercontrol;
 }
 

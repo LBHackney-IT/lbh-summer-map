@@ -5,25 +5,29 @@
   "layergroups": [
     {
       "name": "hang out",
-      "groupicon": "css/images/lbh_icon_chilling.png",
+      "groupicon": "css/images/persona-chilling.png",
+      "groupiconactive": "css/images/persona-chilling-active.png",
       "grouptext": "Chilling",
       "alt": "Two people lying in the park with their dog"
     },
     {
       "name": "children",
-      "groupicon": "css/images/lbh_icon_playing.png",
+      "groupicon": "css/images/persona-playing.png",
+      "groupiconactive": "css/images/persona-playing-active.png",
       "grouptext": "Playing",
       "alt": "Child going down a slide"
     },
     {
       "name": "run",
-      "groupicon": "css/images/lbh_icon_wandering.png",
+      "groupicon": "css/images/persona-wandering.png",
+      "groupiconactive": "css/images/persona-wandering-active.png",
       "grouptext": "Wandering",
       "alt": "Two people cycling on a tandem bike"
     },
     {
       "name": "custom",
-      "groupicon": "css/images/lbh_icon_everything.png",
+      "groupicon": "css/images/persona-everything.png",
+      "groupiconactive": "css/images/persona-everything-active.png",
       "grouptext": "Everything near me",
       "alt": "A woman dancing in the park"
     }

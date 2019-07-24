@@ -73,30 +73,8 @@ html, body {
   color: #000
 }
 
-.header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchInput--2WakA:focus {
-  border: 3px solid #ffbf47
-}
-
-.header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchButton--1sMVz {
-  width: 39px;
-  height: 42px;
-  margin-top: 24px;
-  background-image: url(https://images.ctfassets.net/s2o0gwcffln0/5XlaPzI69uTLTggpQ2cXWS/8bddacd35ff9e8c49c4c2b5c7215ebea/lbh-search.png?h=250);
-  background-repeat: no-repeat;
-  background-position: 50%;
-  border: 1px solid #00664f;
-  background-color: #00b140;
-  color: #fff;
-  float: left;
-  text-align: center
-}
-
 .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchButton--1sMVz:hover {
   cursor: pointer
-}
-
-.header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhHeaderSearch--3WzJt .header-module--lbhHeaderSearchButton--1sMVz:focus {
-  border: 3px solid #ffbf47
 }
 
 .header-module--lbhHeaderBlock--N9g9C .header-module--lbhContainer--39gu1 .header-module--lbhHeaderCtaContainer--2dCdC .header-module--lbhOneAccountLogin--11Ueb {
@@ -116,6 +94,29 @@ html, body {
   text-align: center;
   color: #fff;
   margin-right: 36px
+}
+
+.header-module--lbhHeaderSearch--3WzJt {
+  margin-top: 25px;
+  width: 300px;
+  height: 40px;
+  position: relative;
+  float:right; 
+}
+  
+.header-module--lbhHeaderSearchButton--1sMVz {
+  width: 39px;
+  height: 42px;
+  background-image:url("https://images.ctfassets.net/s2o0gwcffln0/5XlaPzI69uTLTggpQ2cXWS/8bddacd35ff9e8c49c4c2b5c7215ebea/lbh-search.png?h=250");
+  background-repeat: no-repeat;
+  background-position: center center;
+  color: #ffffff;
+  float: right;
+  text-align: center;
+}
+
+.header-module--lbhHeaderSearchButton--1sMVz:hover{
+  cursor: pointer;
 }
 
 .lbhGrid-module--lbh-breadcrumbs--2hRCX {
@@ -290,6 +291,10 @@ html, body {
   color: #fff;
   padding: 10px 20px
 }
+
+
+
+
 .footer-module--isThisUsefulRow--1GArV {
   background: #fff;
   float: left;
