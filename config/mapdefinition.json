@@ -399,7 +399,7 @@
       "searchable": "false",
       "sortorder": "19",
       "icon": "cricket",
-      "markercolour": "green",
+      "markercolour": "pink",
       "metadata": "",
       "popup": {
         "popuptitlefield": "location",
@@ -436,7 +436,7 @@
       "groups": [ "children","custom" ],
       "searchable": "false",
       "sortorder": "22",
-      "icon": "skating",
+      "icon": "snowboarding",
       "markercolour": "darkpurple",
       "metadata": "",
       "popup": {
@@ -448,6 +448,21 @@
           }
         ]
       }
+    },
+    {
+      "title": "Community parklets",
+      "geoserverLayerName": "greenspaces:community_parklet",
+      "groups": [ "hang out","custom" ],
+      "searchable": "false",
+      "sortorder": "22",
+      "icon": "hand-holding-seedling",
+      "markercolour": "green",
+      "metadata": "Community parklets repurpose a parking space on the street where you live, for community uses other than the storage of cars. They can include planters, benches, games, notice boards or anything that the creativity of the community can come up with.",
+      "popup": {
+        "popuptitlefield": "",
+        "popupfields": []
+      }
+
     },
     {
       "title": "Waterway walks",
