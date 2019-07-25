@@ -70,13 +70,13 @@ html, body, #map {
     color: #0072ce;
 }
 
+.link-before-footer a:visited {
+    color: #8031A7;
+}
+
 .link-before-footer a:hover,
 .link-before-footer a:focus {
     color: #0085CA;
-}
-
-.link-before-footer a:visited {
-    color: #8031A7;
 }
 
 .map-personas {
@@ -289,6 +289,7 @@ html, body, #map {
     -webkit-appearance: none;
     background: none;
     border: none;
+    cursor: pointer;
     display: inline-block;
     font-size: 14px;
     font-family: Montserrat;
