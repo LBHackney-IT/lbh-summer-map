@@ -56,6 +56,23 @@ function setZoom() {
   }
 }
 
+
+map.on('layeradd', function(){
+  $('#map-clear').show();
+});
+
+map.on('layerremove', function(layer,layername){
+  var count=0;
+  map.eachLayer(function(){ count += 1; });
+  console.log(count);
+  if (count == 2){
+     $('#map-clear').hide();
+  }
+  
+});
+
+
+
 //utility to clear all layers except from basemapand hackney mask/boundary
 function clearMap() {
     map.eachLayer(function (layer) {

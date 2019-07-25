@@ -185,6 +185,7 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
   $('#persona-button-' + n).on('click', function(e){
     e.stopPropagation();
     $(this).addClass('persona-button--active').siblings().removeClass('persona-button--active');
+    $('#map-clear').show();
 
     //For custom layer only: geolocate and then switch group if in Hackney
     if (layerGroup.group == 'custom') {
