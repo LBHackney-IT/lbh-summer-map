@@ -132,7 +132,19 @@ map.on('locationerror', function (e) {
     alert('Love Summer cannot find your location. Please enable Location Services for your browser in Settings or try again outside of your office as your network may block geolocation.');
 });
 
+//events for adding and removing layers
+map.on('layeradd', function () {
+    $('#map-clear').show();
+});
 
+map.on('overlayremove', function () {
+    var count = 0;
+    map.eachLayer(function () { count += 1; });
+
+    if (count == 2) {
+        $('#map-clear').hide();
+    }
+});
 
 // -------------------------------------------------------------------------------------------------------------
 // ZOOM TO HACKNEY EXTENT - Zoom to Hackney Extent using easyButton (on desktop only)
