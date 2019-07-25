@@ -223,7 +223,7 @@ function createEasyButtons(layerGroup, layers, overlayMaps, layercontrol, n, kee
         switchGroup();
     }
 
-    //bit of that switches the group
+    //bit of code that switches the group
     function switchGroup() {
         //remove all layers 
         for (var j in layers) {
