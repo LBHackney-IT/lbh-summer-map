@@ -201,6 +201,7 @@ html, body, #map {
     padding: 0;
     position: relative;
     z-index: 1;
+    height: 48px;
 }
 
 @media (min-width: 768px) {
