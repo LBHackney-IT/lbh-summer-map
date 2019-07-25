@@ -5,11 +5,11 @@ var map = L.map('map', {
 });
 
 //Limit the view to the extend of the map
-map.setMaxBounds(map.getBounds());
-
+//map.setMaxBounds(map.getBounds());
+map.setMaxBounds([[51.491112, -0.275464], [51.607351, 0.096129]]);
 var isMobile = !window.matchMedia('(min-width: 768px)').matches;
 if (isMobile) {
-  map.setView([51.5490, -0.059928], 11);
+  map.setView([51.5450, -0.059928], 11);
 }
 
 // On resize if we switch between mobile and desktop views then rezoom/centre the map
