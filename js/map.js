@@ -4,6 +4,9 @@ var map = L.map('map', {
   zoom: 13
 });
 
+//Limit the view to the extend of the map
+map.setMaxBounds(map.getBounds());
+
 var isMobile = !window.matchMedia('(min-width: 768px)').matches;
 if (isMobile) {
   map.setView([51.5490, -0.059928], 11);

@@ -302,6 +302,14 @@ html, body, #map {
     top: 0;
 }
 
+
+
+.map-clear:hover {
+    background: #00513F;
+    border-bottom-color: #00513F;
+    color: #ffffff;
+}
+
 .map-clear-icon {
     display: inline-block;
     font-size: 24px;
