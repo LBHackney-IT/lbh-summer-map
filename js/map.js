@@ -179,5 +179,7 @@ if (window.matchMedia('(min-width: 768px)').matches) {
 }
 
 $('#map').on('click', () => {
-  $controls.removeClass(CONTROLS_OPEN_CLASS);
+  if (!window.matchMedia('(min-width: 768px)').matches) {
+    $controls.removeClass(CONTROLS_OPEN_CLASS);
+  }
 });
