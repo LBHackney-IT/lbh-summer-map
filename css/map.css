@@ -241,6 +241,7 @@ html, body, #map {
         background: transparent;
         border: none;
         height: 600px;
+        overflow: hidden;
     }
 }
 
