@@ -54,6 +54,12 @@ html, body, #map {
         margin: 0 auto;
         padding: 0;
     }
+
+    .container-mask {
+        height: 600px;
+        overflow: hidden;
+        width: 100%;
+    }
 }
 
 .link-before-footer {
@@ -206,8 +212,10 @@ html, body, #map {
 
 @media (min-width: 768px) {
     .map-controls {
+        display: flex;
+        flex-wrap: wrap;
         margin: 0;
-        text-align: right;
+        justify-content: space-between;
     }
 }
 
@@ -221,7 +229,7 @@ html, body, #map {
     padding-top: 0;
     position: absolute;
     left: 0;
-    top: 48px;
+    top: 0;
     transform: translateX(-100%);
     transition: transform 500ms;
     width: 270px;
@@ -230,13 +238,9 @@ html, body, #map {
 
 @media (min-width: 768px) {
     .map-sidebar {
+        background: transparent;
         border: none;
         height: 600px;
-        overflow: hidden;
-        text-align: left;
-        top: 48px;
-        transform: none;
-        transition: none;
     }
 }
 
@@ -249,6 +253,7 @@ html, body, #map {
     appearance: none;
     background: none;
     border: none;
+    cursor: pointer;
     margin: 12px 18px;
     padding: 0;
 }
@@ -281,7 +286,7 @@ html, body, #map {
 
 @media (min-width: 768px) {
     .map-sidebar-toggle {
-        display: none;
+        margin-left: 0;
     }
 }
 
@@ -364,10 +369,29 @@ html, body, #map {
     background: #ECEBEB;
 }
 
-.leaflet-control-layers-overlays label:hover .leaflet-control-layers-selector + span {
-    background: #00513F;
-    border-bottom-color: #00513F;
-    color: #ffffff;
+.leaflet-control-layers-selector:focus + span {
+    border: 3px solid #FFBF47;
+    padding-bottom: 7px;
+}
+
+.leaflet-control-layers-selector:checked:focus + span {
+    border-bottom-color: #FFBF47;
+}
+
+@media (min-width: 768px) {
+    .leaflet-control-layers-overlays label:hover .leaflet-control-layers-selector + span {
+        background: #00513F;
+        border-bottom-color: #00513F;
+        color: #ffffff;
+    }
+
+    .leaflet-control-layers-overlays label:hover .leaflet-control-layers-selector:focus + span {
+        border-bottom-color: #FFBF47;
+    }
+
+    label:hover .leaflet-control-layers-selector:focus + span span.control-active-border {
+        background: #FFBF47 !important;
+    }
 }
 
 .leaflet-control-layers-selector:checked + span {
@@ -391,11 +415,6 @@ html, body, #map {
     width: 100%;
 }
 
-.leaflet-control-layers-selector:focus + span {
-    border: 3px solid #FFBF47;
-    padding-bottom: 7px;
-}
-
 .control-active-border {
     bottom: -3px;
     left: -3px;
@@ -408,19 +427,21 @@ input:not(:checked) + span span.control-active-border {
     background: #bfc1c3 !important;
 }
 
-label:hover .leaflet-control-layers-selector + span span.control-active-border {
-    background: #003D2F !important;
-}
+@media (min-width: 768px) {
+    label:hover .leaflet-control-layers-selector + span span.control-active-border {
+        background: #003D2F !important;
+    }
 
 
-label:hover .leaflet-control-layers-selector + span .fas {
-    color: #FFF !important;
-}
+    label:hover .leaflet-control-layers-selector + span .fas {
+        color: #FFF !important;
+    }
 
 
-.leaflet-control-layers-overlay label:hover > div > span {
-    background: #00513F;
-    color: #ffffff;
+    .leaflet-control-layers-overlay label:hover > div > span {
+        background: #00513F;
+        color: #ffffff;
+    }
 }
 
 .leaflet-control-layers-selector:checked + span .control-count {
@@ -446,12 +467,6 @@ label:hover .leaflet-control-layers-selector + span .fas {
 
 .leaflet-control-layers-expanded .leaflet-control-layers-list {
     padding-right: 0;
-}
-
-@media (min-width: 768px) {
-    .leaflet-control-layers-expanded .leaflet-control-layers-list {
-        padding-right: 5px;
-    }
 }
 
 .leaflet-control-layers-overlays label {
