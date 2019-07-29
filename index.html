@@ -76,16 +76,18 @@
                 <section id="map-controls" class="map-controls">
                     <button id="map-toggle" class="map-sidebar-toggle">
                         <i class="fal fa-sliders-h map-sidebar-toggle-icon"></i>
-                        <span class="map-sidebar-toggle-text map-sidebar-toggle-text--hide">Hide</span>
-                        <span class="map-sidebar-toggle-text map-sidebar-toggle-text--show">Show</span>
+                        <span class="map-sidebar-toggle-text map-sidebar-toggle-text--hide">Hide list</span>
+                        <span class="map-sidebar-toggle-text map-sidebar-toggle-text--show">Show list</span>
                     </button>
                     <button id="map-clear" class="map-clear" style="display:none">
                         <i class="fal fa-times map-clear-icon"></i>
                         <span class="map-clear-text">Clear map</span>
                     </button>
-                    <sidebar class="map-sidebar">
-                        <div id="map-legend" class="map-legend"></div>
-                    </sidebar>
+                    <div class="container container-mask">
+                        <sidebar class="map-sidebar">
+                            <div id="map-legend" class="map-legend"></div>
+                        </sidebar>
+                    </div>
                 </section>
                 <div class="map-wrapper">
                     <div id="map"></div>

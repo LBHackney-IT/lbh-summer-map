@@ -171,12 +171,12 @@ var $sidebarToggle = $('.map-sidebar-toggle');
 var $controls = $('.map-controls');
 
 $sidebarToggle.on('click', (e) => {
-  if (window.matchMedia('(min-width: 768px)').matches) {
-    return false;
-  } else {
-    $controls.toggleClass(CONTROLS_OPEN_CLASS);
-  }
+  $controls.toggleClass(CONTROLS_OPEN_CLASS);
 });
+
+if (window.matchMedia('(min-width: 768px)').matches) {
+  $sidebarToggle.trigger('click');
+}
 
 $('#map').on('click', () => {
   $controls.removeClass(CONTROLS_OPEN_CLASS);
