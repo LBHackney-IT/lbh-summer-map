@@ -50,6 +50,13 @@ html, body, #map {
 
 .container-mask {
     pointer-events: none;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .container-mask {
+        overflow: hidden;
+    }
 }
 
 @media (min-width: 980px) {
@@ -62,7 +69,6 @@ html, body, #map {
     .container-mask {
         height: 600px;
         overflow: hidden;
-        width: 100%;
     }
 }
 
@@ -231,6 +237,7 @@ html, body, #map {
     height: 450px;
     overflow: scroll;
     padding-top: 0;
+    pointer-events: all;
     position: absolute;
     left: 0;
     top: 0;
