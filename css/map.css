@@ -55,6 +55,7 @@ html, body, #map {
 
 @media (min-width: 768px) {
     .container-mask {
+        height: 600px;
         overflow: hidden;
     }
 }
@@ -64,11 +65,6 @@ html, body, #map {
         max-width: 960px;
         margin: 0 auto;
         padding: 0;
-    }
-
-    .container-mask {
-        height: 600px;
-        overflow: hidden;
     }
 }
 
